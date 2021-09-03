@@ -17,8 +17,6 @@ export default function Nav(){
         }
     }, []);
 
-
-
     const handleScroll = () => {
         setScroll(window.scrollY);
     }
@@ -30,15 +28,11 @@ export default function Nav(){
            scroll ?  "header-padding-1 sticky-bar header-res-padding clearfix stick"
                  :  "header-padding-1  header-res-padding clearfix stick"}
            >
-       
- 
             <div className="container-fluid">
                 <div className="row">
-
                         <Logo/>
                         <Menu/>
                         <SideMenu/>
-                        
                 </div>
             </div>
         </div>

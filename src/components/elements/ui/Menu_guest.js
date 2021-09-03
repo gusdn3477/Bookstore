@@ -5,7 +5,7 @@ export default function Menu(){
 
     const [ menuData, setMenuData ] = useState([]);
     let process = require('../../../db/myProcess.json');
-
+    
     useEffect(() => {
         fetch(`http://${process.IP}:${process.PORT}/menu`)
         .then(res => {

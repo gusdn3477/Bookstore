@@ -5,10 +5,10 @@ import React, { useEffect, useState} from 'react';
 export default function Brand(){
 
     const [ newBrand, setNewBrand ] = useState([]);
-
+    let process = require('../../../db/myProcess.json');
 
     useEffect(() => {
-        fetch("http://localhost:3005/brand")
+        fetch(`http://${process.IP}:${process.PORT}/brand`)
         .then(res => {
             return res.json();
         })
@@ -32,8 +32,6 @@ export default function Brand(){
         </div> 
 
     )).slice(0,4);
-
-
 
     return(
         <section id="brand">

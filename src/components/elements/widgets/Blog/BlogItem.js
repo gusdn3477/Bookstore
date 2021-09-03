@@ -6,10 +6,10 @@ import {Link} from 'react-router-dom';
 export default function BlogItem(){
 
     const [ newBlog , setNewBlog] = useState([]);
-
+    let process = require('../../../db/myProcess.json');
 
     useEffect(() => {
-        fetch("http://localhost:3005/blog")
+        fetch(`http://${process.IP}:${process.PORT}//blog`)
         .then(res => {
             return res.json();
         })
@@ -17,11 +17,6 @@ export default function BlogItem(){
             setNewBlog(data);
         })
     },[])
-
-
-
-
-
 
     const blogList = newBlog.map(item => (
     

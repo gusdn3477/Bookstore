@@ -6,9 +6,6 @@ import CategoryData from '../../../db/nav.json';
 
 export default function Deal(){
 
-
-    
-
     const [ categoryName , setCategoryName ] = useState("fashion");
     let sliceNumber = 8;
     let columnNumber = 4;
