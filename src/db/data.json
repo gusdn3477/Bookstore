@@ -1,0 +1,51 @@
+{
+    "days" : [
+        { "id" : 1 , "day" : 1 },
+        { "id" : 2 , "day" : 2 },
+        { "id" : 3 , "day" : 3 }
+    ],
+    "words" : [
+        { 
+            "id" : 1 ,
+            "day" : 1 ,
+            "eng" : "book" ,
+            "kor" : "책" ,
+            "isDone" : false
+        },
+        { 
+            "id" : 2 ,
+            "day" : 1 ,
+            "eng" : "apple" ,
+            "kor" : "사과" ,
+            "isDone" : false
+        },
+        { 
+            "id" : 3 ,
+            "day" : 2 ,
+            "eng" : "pencil" ,
+            "kor" : "연필" ,
+            "isDone" : false
+        },
+        { 
+            "id" : 4 ,
+            "day" : 2 ,
+            "eng" : "cloud" ,
+            "kor" : "구름" ,
+            "isDone" : false
+        },
+        { 
+            "id" : 5 ,
+            "day" : 3 ,
+            "eng" : "notebook" ,
+            "kor" : "공책" ,
+            "isDone" : false
+        },
+        { 
+            "id" : 6 ,
+            "day" : 3 ,
+            "eng" : "box" ,
+            "kor" : "상자" ,
+            "isDone" : false
+        }
+    ]
+}

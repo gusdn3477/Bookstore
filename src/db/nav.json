@@ -1,0 +1,113 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "id": 2,
+      "name": "Features",
+      "url": "/features"
+    },
+    {
+      "id": 3,
+      "name": "Pricing",
+      "url": "/pricing"
+    },
+    {
+      "id": 4,
+      "name": "FAQs",
+      "url": "/faqs"
+    },
+    {
+      "id": 5,
+      "name": "About",
+      "url": "/about"
+    }
+  ],
+  "sidemenu": [
+    {
+      "id": 1,
+      "name": "fas fa-search",
+      "url": "search"
+    },
+    {
+      "id": 2,
+      "name": "fas fa-user",
+      "url": "/user"
+    },
+    {
+      "id": 3,
+      "name": "fas fa-random",
+      "url": "/compare"
+    },
+    {
+      "id": 4,
+      "name": "far fa-heart",
+      "url": "/wishlist"
+    },
+    {
+      "id": 5,
+      "name": "fas fa-shopping-bag",
+      "url": "/cart"
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "fashion"
+    },
+    {
+      "id": 2,
+      "name": "men"
+    },
+    {
+      "id": 3,
+      "name": "women"
+    },
+    {
+      "id": 4,
+      "name": "boy"
+    }
+  ],
+
+  "brand": [
+    {
+      "id": 1,
+      "name": "AWS",
+      "img": "fab fa-aws",
+      "content": "Amazon Web Services"
+    },
+    {
+      "id": 2,
+      "name": "Line",
+      "img": "fab fa-line",
+      "content": "Line Line Line Line Line Line "
+    },
+    {
+      "id": 3,
+      "name": "ATOM",
+      "img": "fas fa-atom",
+      "content": "ATOM for Python"
+    },
+    {
+      "id": 4,
+      "name": "REACT",
+      "img": "fab fa-react",
+      "content": "JavaScript Library FaceBook"
+    },
+    {
+      "id": 5,
+      "name": "FaceBook",
+      "img": "fab fa-facebook",
+      "content": "페이스북"
+    },
+    {
+      "id": 6,
+      "name": "APPLE",
+      "img": "fab fa-apple",
+      "content": "스티브 잡스"
+    }
+  ]
+}
