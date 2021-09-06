@@ -2,9 +2,6 @@ import React, {useEffect, useState} from "react";
 import UseFetch from "../../../../hooks/UseFetch";
 import SideCategoryList from "./SideCategoryList";
 
-
-
-
 export default function SideBar({setCategoryName}){
 
     var process = require('../../../../db/myProcess.json');
@@ -22,9 +19,6 @@ export default function SideBar({setCategoryName}){
         })
         
     },[process.IP, process.PORT]);
-    
-
-
 
     return(
         <div className="col-lg-3 order-2 order-lg-1">
@@ -42,8 +36,6 @@ export default function SideBar({setCategoryName}){
                 <h4 className="pro-sidebar-title">Categories </h4>
                 <div className="sidebar-widget-list mt-30">
                     <ul>
-
-
 
 {
           categoryList.map((item, idx) => (
@@ -63,12 +55,6 @@ export default function SideBar({setCategoryName}){
                     </ul>
                 </div>
             </div>
-
-
-
-
-
-
 
             <div className="sidebar-widget mt-50">
                 <h4 className="pro-sidebar-title">Color </h4>
@@ -168,8 +154,6 @@ export default function SideBar({setCategoryName}){
                     </ul>
                 </div>
             </div>
-
-
         </div>
     </div>
     );

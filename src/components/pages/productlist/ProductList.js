@@ -12,8 +12,6 @@ export default function ProductList(){
 
     const [categoryName , setCategoryName] = useState("");
 
-
-
     return(
         <Fragment>
             <Header/>

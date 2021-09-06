@@ -1,16 +1,11 @@
-
 import ProductView from "../product/ProductView";
 import React, {useState, useEffect} from 'react';
 
 export default function Shop({categoryName}){
-   
-    
   
     const [sliceNumber , setSliceNumber ] = useState(15);
     const [columnNumber , setColumnNumber ] = useState(4);
-    const [onActive, setOnActive] = useState(false);
-
-    
+    const [onActive, setOnActive] = useState(false);  
 
     const handleLayout = (sln, coln) => {
         setSliceNumber(sln)
@@ -18,11 +13,8 @@ export default function Shop({categoryName}){
         setOnActive(!onActive)
     }
 
-
     return(
     <div className="col-lg-9 order-1 order-lg-2">
-
-
 
         <div className="shop-top-bar mb-35">
             <div className="select-shoing-wrap">
@@ -42,26 +34,17 @@ export default function Shop({categoryName}){
             </div>
         </div>
 
-
-
         <div className="shop-bottom-area mt-35">
             <div className="row grid three-column">
-
                 
             <ProductView   
                 sliceNumber = {sliceNumber}
                 columnNumber = {columnNumber}
                 categoryName = {categoryName}
             />
-               
-          
-              
-
-
 
             </div>
         </div>
-
 
         <div className="pro-pagination-style text-center mt-30">
             <ul className="mb-0 mt-0">
@@ -76,8 +59,6 @@ export default function Shop({categoryName}){
                 <li className="page-item null"><button className="page-link">10</button></li>
             </ul>
         </div>
-
-
 
     </div>
 

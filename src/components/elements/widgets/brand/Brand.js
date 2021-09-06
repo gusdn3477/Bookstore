@@ -5,7 +5,7 @@ import React, { useEffect, useState} from 'react';
 export default function Brand(){
 
     const [ newBrand, setNewBrand ] = useState([]);
-    let process = require('../../../db/myProcess.json');
+    let process = require('../../../../db/myProcess.json');
 
     useEffect(() => {
         fetch(`http://${process.IP}:${process.PORT}/brand`)

@@ -136,38 +136,6 @@
       "size": ""
     },
     {
-      "id": "89",
-      "name": "Lorem ipsum jacket",
-      "image": [
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 12.45,
-      "discount": 10,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
-    {
-      "id": "90",
-      "name": "Lorem ipsum jacket90",
-      "image": [
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 12.45,
-      "discount": 10,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
-    {
       "id": "91",
       "name": "Lorem ipsum jacket",
       "image": [
