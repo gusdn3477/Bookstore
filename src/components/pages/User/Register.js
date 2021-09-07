@@ -1,12 +1,11 @@
 import Header from '../../layout/Header';
 import Footer from '../../layout/Footer';
 import Bread from '../../elements/ui/Bread';
-import TestTable from '../../elements/widgets/TestTable/TestTable';
 import RegisterForm from '../../elements/widgets/Form/Register';
 import { Fragment } from 'react';
 
 
-export default function Test(){
+export default function Register(){
 
     return(
         <Fragment>

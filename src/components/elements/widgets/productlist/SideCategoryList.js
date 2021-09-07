@@ -26,11 +26,6 @@ export default function SideCategoryList({item, setCategoryName}){
         
     },[process.IP, process.PORT]);
 
-
-
-    
-
-
     return(
         <li key ={item.id}>
         <div className="sidebar-widget-list-left">

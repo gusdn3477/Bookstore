@@ -22,8 +22,8 @@ import ReduxSample from '../src/components/pages/reduxsample/ReduxSample'
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Test from './components/pages/Test/Test';
-import Login from './components/pages/login/Login';
-import Register from './components/pages/register/Register';
+import Login from './components/pages/User/Login';
+import Register from './components/pages/User/Register';
 
 function App() {
   return (

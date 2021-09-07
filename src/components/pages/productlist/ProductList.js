@@ -1,12 +1,9 @@
-
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../../layout/Header';
 import Footer from '../../layout/Footer';
 import Bread from '../../elements/ui/Bread';
 import SideBar from '../../elements/widgets/productlist/SideBar';
 import Shop from '../../elements/widgets/productlist/Shop';
-
-
 
 export default function ProductList(){
 
