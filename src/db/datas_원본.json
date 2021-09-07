@@ -349,31 +349,31 @@
       "id": 1,
       "name": "las la-search",
       "url": "search",
-      "count": 0
+      "count": 3
     },
     {
       "id": 2,
       "name": "las la-user-circle",
       "url": "/myaccount",
-      "count": 0
+      "count": 2
     },
     {
       "id": 3,
-      "name": "las la-shopping-bag",
-      "url": "/cart",
-      "count": 0
+      "name": "las la-random",
+      "url": "/compare",
+      "count": 1
     },
     {
       "id": 4,
-      "name": "las la-shopping-bag",
-      "url": "/register",
-      "count": 0
+      "name": "las la-bookmark",
+      "url": "/wishlist",
+      "count": 5
     },
     {
       "id": 5,
       "name": "las la-shopping-bag",
-      "url": "/login",
-      "count": 0
+      "url": "/cart",
+      "count": 3
     }
   ],
   "category": [

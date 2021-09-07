@@ -11,7 +11,6 @@ export default function Home(){
         <div id="wrap">
         <Header/>
         <Banner/>
-        <Brand />
         <Deal />
         <Blog/>
         <Footer/>

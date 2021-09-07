@@ -10,7 +10,7 @@ export default function Register(){
     return(
         <Fragment>
             <Header/>
-            <Bread breadName ="Test List" />
+            <Bread breadName ="Register Page" />
             <RegisterForm />
             <Footer/>
         </Fragment>
