@@ -1,12 +1,83 @@
 import React, {useEffect, useState} from "react";
 import UseFetch from "../../../../hooks/UseFetch";
 import SideCategoryList from "./SideCategoryList";
-
+import { useHistory } from "react-router";
 export default function SideBar({setCategoryName}){
 
-    var process = require('../../../../db/myProcess.json');
+    const process = require('../../../../db/myProcess.json');
+    const gogo = useHistory();
     const [categoryList, setCategoryList] = useState([]);
+    const [usersDatas, setUsersDatas] = useState([]);
+    const [values, setValues] = useState({
+        name: ''
+    })
+
+    const [guideTxts, setGuideTxts] = useState({
+        nameGuide : ''
+    });
+
+    const [error, setError] = useState({
+        nameError: ''
+      })
+
+      const onTextCheck = () => {
+        let nameError = "";
+        
+        if (values.name.length === 0) nameError = "이름을 입력해주세요.";
     
+        //console.log(userIdError, emailError, pwdError, confirmPwd, nameError, phoneError, userTypesError, useConfirmError)
+        setError({
+          nameError
+        })
+    
+        if (nameError) return false;
+            return true;
+      }
+
+
+    useEffect(()=>{
+        fetch(`http://${process.IP}:${process.PORT}/users`)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            setUsersDatas(data);
+            console.log(data);
+        });
+    },[process.IP, process.PORT]);
+
+    const handleChangeForm = (e) => {
+        setValues({ 
+            ...values, 
+            [e.target.name]: e.target.value 
+        });
+    }
+
+    const handlePutUserLists = (e) => {
+        e.preventDefault();
+
+        const valid = onTextCheck();
+        if (!valid) console.error("retry");
+        else {
+        
+            fetch(`http://${process.IP}:${process.PORT}/users`,{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    id : usersDatas.length + 1,
+                    name: values.name
+                }),
+            }).
+            then(
+                alert("success"),
+                gogo.push('/')
+                //window.location.href = '/'
+
+            )
+            }
+    }
 
     useEffect(() => {
         fetch(`http://${process.IP}:${process.PORT}/category`)
@@ -50,7 +121,6 @@ export default function SideBar({setCategoryName}){
          )
         )
 }
-
 
                     </ul>
                 </div>

@@ -1,5 +1,40 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": 1,
+      "userId": "gusdn3477",
+      "password": "!ahdghksdmlqka1"
+    },
+    {
+      "id": 2,
+      "userId": "gusdn3477",
+      "password": "!ahdghksdmlqka1"
+    },
+    {
+      "id": 3,
+      "userId": "gusdn3477",
+      "password": "!ahdghksdmlqka1",
+      "name": "박현우",
+      "email": "gusdn3477@naver.com",
+      "phone": "010-4920-0306"
+    },
+    {
+      "id": 4,
+      "userId": "gusdn3477",
+      "password": "!ahdghksdmlqka1",
+      "name": "박현우",
+      "email": "gusdn3477@naver.com",
+      "phone": "010-4920-0306"
+    },
+    {
+      "id": 5,
+      "userId": "gusdn3477",
+      "password": "!ahdghksdmlqka1",
+      "name": "박현우",
+      "email": "gusdn3477@naver.com",
+      "phone": "010-4920-0306"
+    }
+  ],
   "size": [
     {
       "id": 1,

@@ -120,7 +120,7 @@ export default function RegisterForm() {
 
         else {
         
-            fetch(`http://${process.IP}:${process.PORT}/users`,{
+            fetch(`/user-service/users`,{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -128,7 +128,7 @@ export default function RegisterForm() {
                 body: JSON.stringify({
                     id : usersDatas.length + 1,
                     userId: values.userId,
-                    password: values.password,
+                    pwd: values.password,
                     name: values.name,
                     email: values.email,
                     phone: values.phone

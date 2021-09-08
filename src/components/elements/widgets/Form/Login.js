@@ -57,26 +57,19 @@ export default function LoginForm() {
 
       const onTextCheck = () => {
         let userIdError = "";
-        let emailError = "";
         let pwdError = "";
-        let nameError = "";
-        let phoneError = "";
         
     
         if (!isUserId(values.userId)) userIdError = "아이디 형식을 확인 해 주세요.( 한글 불가 )";
-        if (!isEmail(values.email)) emailError = "email 형식이 아닙니다.";
         if (!isPwd(values.password)) pwdError = "비밀번호 조건을 만족 할 수 없습니다.";
-        if (values.userId === values.password) pwdError = "아이디를 비밀번호로 사용 할 수 없습니다."; 
-        if (!isPhone(values.phone)) phoneError = "휴대폰 형식이 아닙니다.";
-
-        if (values.name.length === 0) nameError = "이름을 입력해주세요.";
+        if (values.userId === values.password) pwdError = "아이디를 비밀번호로 사용 할 수 없습니다.";
     
         //console.log(userIdError, emailError, pwdError, confirmPwd, nameError, phoneError, userTypesError, useConfirmError)
         setError({
-          userIdError, emailError, pwdError, nameError, phoneError
+          userIdError, pwdError
         })
     
-        if (userIdError || emailError || pwdError || nameError || phoneError ) return false;
+        if (userIdError || pwdError) return false;
         return true;
       }
 
@@ -101,8 +94,6 @@ export default function LoginForm() {
     }
 
     const handlePutUserLists = (e) => {
-        //alert(usersDatas.length);
-        //console.log(values);
         e.preventDefault();
 
         const valid = onTextCheck();
@@ -119,17 +110,19 @@ export default function LoginForm() {
                 body: JSON.stringify({
                     id : usersDatas.length + 1,
                     userId: values.userId,
-                    password: values.password,
-                    name: values.name,
-                    email: values.email,
-                    phone: values.phone
+                    password: values.password
                 }),
             }).
-            then(
-                alert("success"),
-                gogo.push('/')
-                //window.location.href = '/'
-
+            then(res => res.json())
+            .then((res) => {
+                if(res.token){
+                    localStorage.setItem("token", res.token);
+                    gogo.push("/");
+                }
+                else{
+                    alert("로그인 정보를 확인하세요");
+                }
+            }
             )
             }
     }
