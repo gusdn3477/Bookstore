@@ -244,23 +244,23 @@
     },
     {
       "id": 2,
-      "name": "Features",
-      "url": "/features"
-    },
-    {
-      "id": 3,
       "name": "SHOP",
       "url": "/productlist"
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "MYPAGE",
       "url": "/mypage"
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "ADMIN",
       "url": "/admin"
+    },
+    {
+      "id": 4,
+      "name": "찾아오시는 길",
+      "url": "/road"
     }
   ],
   "sidemenu": [
@@ -280,18 +280,6 @@
       "id": 3,
       "name": "las la-shopping-bag",
       "url": "/cart",
-      "count": 0
-    },
-    {
-      "id": 4,
-      "name": "las la-shopping-bag",
-      "url": "/register",
-      "count": 0
-    },
-    {
-      "id": 5,
-      "name": "las la-shopping-bag",
-      "url": "/login",
       "count": 0
     }
   ],

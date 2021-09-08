@@ -162,7 +162,7 @@ export default function RegisterForm() {
             <div className="myaccount-info-wrapper">
             <form  onSubmit={handlePutUserLists}>
                 <div className="account-info-wrapper">
-                    <h4>저희의 고객이 되어 주세요.</h4>
+                    <h4>형식에 맞춰 작성해 주시면 됩니다.</h4>
                 </div>
                 <div className="row">
                     

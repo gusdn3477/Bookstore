@@ -12,16 +12,6 @@ export default function MyAccountForm() {
                         <div className="myaccount-wrapper">
                             <div className="accordion" id="accordionPanelsStayOpenExample">
                                 <div className="accordion-item single-my-account mb-20 card">
-                                    <div className="panel-heading card-header" id="panelsStayOpen-headingOne">
-                                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                            <h3 className="panel-title"><span>1 .</span> Edit your account information </h3>
-                                        </button>
-                                    </div>
-                                    <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                                        <SignUp />
-                                    </div>
-                                </div>
-                                <div className="accordion-item single-my-account mb-20 card">
                                     <div className="panel-heading card-header" id="panelsStayOpen-headingTwo">
                                         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                                             <h3 className="panel-title"><span>2 .</span> Change your password</h3>

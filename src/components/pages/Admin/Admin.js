@@ -1,44 +1,33 @@
 import React from 'react';
-import HeaderAdmin from '../../../components/layout/Header_admin';
-import Deal from '../../../components/pages/deal/Deal';
-import Brand from '../../../components/elements/widgets/brand/Brand';
-import Blog from '../Blog/Blog';
+import Header from '../../../components/layout/Header';
 import Footer from '../../layout/Footer';
-import Banner from '../../elements/ui/Banner';
+import Bread from '../../elements/ui/Bread';
+import { Link } from 'react-router-dom';
 
-export default function Home(){
+export default function ADMIN(){
     return(
         <div id="wrap">
-        <HeaderAdmin/>
-
+        <Header/>
+        <Bread breadName ="ADMIN PAGE" />
         <div class="Container">
         <div className="login-form">
     <div className="mb-3">
-        <h3>상품 등록</h3>
-        <div>상품을 등록할 수 있습니다.</div>
+        <h3>상품 관리</h3>
+        <div>상품을 관리(등록, 수정, 삭제)할 수 있습니다.</div>
     </div>
-    <button type="button" class="btn btn-color-orange admin-submit"
-        onclick="location.href='/register_for_admin'">상품 등록</button>
+    <Link to="/productcontrol">
+        <button type="button" class="btn btn-color-orange admin-submit">상품 관리</button>
+    </Link>
 </div>
 
 <div className="login-form">
     <div className="mb-3">
-        <h3>상품 조회</h3>
-        <div>상품을 조회할 수 있습니다.</div>
+        <h3>거래내역 확인</h3>
+        <div>현재까지 이뤄진 거래내역을 확인할 수 있습니다.</div>
     </div>
-    <button type="button" class="btn btn-color-orange admin-submit"
-        onclick="location.href='/register_for_admin'">상품 조회</button>
-</div>
-
-
-
-<div className="login-form">
-    <div className="mb-3">
-        <h3>결제내역 확인</h3>
-        <div>결제내역을 확인할 수 있습니다.</div>
-    </div>
-    <button type="button" class="btn btn-color-orange admin-submit"
-        onclick="location.href='/register_for_admin'">결제내역 확인</button>
+    <Link to="/ProductMake">
+        <button type="button" class="btn btn-color-orange admin-submit">거래내역 확인</button>
+    </Link>
     </div>
         
 </div>

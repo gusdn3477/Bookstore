@@ -27,6 +27,8 @@ import Login from './components/pages/User/Login';
 import Register from './components/pages/User/Register';
 import Admin from './components/pages/Admin/Admin'
 import ProductMake from './components/pages/Product/ProductMake'
+import ProductControl from './components/pages/Product/ProductControl'
+import Road from './components/pages/Road/Road';
 
 function App() {
   return (
@@ -46,6 +48,10 @@ function App() {
         <Route exact path="/register"><Register/></Route>
         <Route exact path="/login"><Login/></Route>
         <Route exact path="/productMake"><ProductMake/></Route>
+        <Route exact path="/productcontrol"><ProductControl/></Route>
+        <Route exact path="/road"><Road/></Route>
+        
+        
         <Provider store={store}>
           <Route exact path="/reduxsample"><ReduxSample/></Route>
         </Provider>

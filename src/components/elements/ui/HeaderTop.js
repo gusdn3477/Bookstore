@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 export default function HeaderTop(){
 
     return(
@@ -14,34 +13,22 @@ export default function HeaderTop(){
                         <span>3조 책방 <i className="fa fa-angle-down"></i></span>
                         <div className="lang-car-dropdown">
                             <ul>
-                                <li><button value="en">English</button></li>
-                                <li><button value="fn">French</button></li>
-                                <li><button value="de">Germany</button></li>
+                                <li><button value="en">권진희</button></li>
+                                <li><button value="fn">김영모</button></li>
+                                <li><button value="de">박현우</button></li>
+                                <li><button value="de">윤희상</button></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div className="same-language-currency use-style">
-                        <span>GBP <i className="fa fa-angle-down"></i></span>
-                        <div className="lang-car-dropdown">
-                            <ul>
-                                <li><button value="USD">USD</button></li>
-                                <li><button value="EUR">EUR</button></li>
-                                <li><button value="GBP">GBP</button></li>
-                            </ul>
-                        </div>
+                    <div className="header-offer">
+                        <p>9월 15일까지 배송료 <span>무료!</span></p>
                     </div>
-
-                    <div className="same-language-currency">
-                        <p>Call Us 010-4920-0306</p>
-                    </div>
-
                 </div>
-
-                <div className="header-offer">
-                    <p>9월 15일까지 배송료 <span>무료!</span></p>
+                <div>
+                    <Link to="/login"><button type="button" class="btn btn-color-orange admin-submit">로그인</button></Link>
+                    <Link to="/register"><button type="button" class="btn btn-color-orange admin-submit">회원가입</button></Link>
                 </div>
-
             </div>
             
         </div>
