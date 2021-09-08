@@ -25,8 +25,6 @@ export default function RegisterForm() {
         pwdError: ''
       })
 
-
-
   const isUserId = userId => {
     const userIdRegex = /^[a-z0-9_!@$%^&*-+=?"]{1,20}$/
     return userIdRegex.test(userId);

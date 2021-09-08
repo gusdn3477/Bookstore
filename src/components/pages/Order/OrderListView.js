@@ -41,14 +41,11 @@ export default function CartListView({data, setCartDatas}) {
             <a href="/product/2">{data.name}</a>
         </td>
         <td className="product-price-cart">
-            <span className="amount old">{(data.price * ((100+data.discount)/100)).toFixed(2)}</span>
             <span className="amount">{data.price}</span>
         </td>
         <td className="product-quantity">
             <div className="cart-plus-minus">
-                <button className="dec qtybutton" onClick={()=>handleCountDec()}>-</button>
                 <input className="cart-plus-minus-box" type="text" readonly="" value={count} />
-                <button className="inc qtybutton" onClick={()=>handleCountAdd()}>+</button>
             </div>
         </td>
         <td className="product-subtotal">{(data.price * count).toFixed(2)}</td>

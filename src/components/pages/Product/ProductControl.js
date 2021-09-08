@@ -24,7 +24,7 @@ export default function Home(){
             <h3>상품 수정 및 삭제</h3>
             <div>상품을 수정 및 삭제할 수 있습니다.</div>
         </div>
-        <Link to="/productmake">
+        <Link to="/productmodify">
                 <button type="button" class="btn btn-color-orange admin-submit">상품 수정/삭제</button>
         </Link>
         </div>

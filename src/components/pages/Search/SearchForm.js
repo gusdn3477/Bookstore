@@ -14,10 +14,7 @@ export default function RegisterForm() {
         unitPrice : '',
         createdAt : '',
         image : '',
-        writer : '',
-
-        userId: '',
-        name: ''
+        writer : ''
     })
 
     const [guideTxts, setGuideTxts] = useState({
@@ -28,12 +25,7 @@ export default function RegisterForm() {
         createdAt : '',
         image : '',
         writer : '',
-        userGuide : '최대 20자 까지 가능합니다.',
-        emailGuide : '이메일 형식에 맞게 작성해 주세요.',
-        pwdGuide : '숫자와 문자를 조합해서 최소 8글자는 입력해 주세요.',
-        confirmPwdGuide : '한번더 입력해 주세요.',
-        nameGuide : '',
-        phoneGuide : '. 을 입력하지 말아 주세요.'
+        userGuide : '최대 20자 까지 가능합니다.'
     });
 
     const [error, setError] = useState({
@@ -59,8 +51,6 @@ export default function RegisterForm() {
         let userIdError = "";
         let nameError = "";
         
-    
-        if (!isUserId(values.userId)) userIdError = "아이디 형식을 확인 해 주세요.( 한글 불가 )";
         if (values.name.length === 0) nameError = "이름을 입력해주세요.";
     
         //console.log(userIdError, emailError, pwdError, confirmPwd, nameError, phoneError, userTypesError, useConfirmError)
@@ -103,7 +93,7 @@ export default function RegisterForm() {
 
         else {
         
-            fetch(`/user-service/users`,{
+            fetch(`/catalog-service/catalogs`,{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

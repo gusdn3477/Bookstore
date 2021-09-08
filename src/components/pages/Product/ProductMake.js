@@ -10,7 +10,7 @@ export default function ProductMake(){
     return(
         <Fragment>
             <Header/>
-            <Bread breadName ="상품등록 Page" />
+            <Bread breadName ="상품등록" />
             <ProductMakeForm />
             <Footer/>
         </Fragment>

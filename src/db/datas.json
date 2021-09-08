@@ -24,22 +24,6 @@
   ],
   "cart": [
     {
-      "id": "15",
-      "name": "Lorem ipsum microphone",
-      "image": [
-        "/assets/img/product/electronics/6.jpg",
-        "/assets/img/product/electronics/7.jpg",
-        "/assets/img/product/electronics/8.jpg",
-        "/assets/img/product/electronics/1.jpg",
-        "/assets/img/product/electronics/2.jpg"
-      ],
-      "price": 12.5,
-      "discount": 0,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
-    {
       "id": "11",
       "name": "Lorem ipsum speaker",
       "image": [
@@ -50,70 +34,6 @@
         "/assets/img/product/electronics/6.jpg"
       ],
       "price": 10.6,
-      "discount": 10,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
-    {
-      "id": "1",
-      "name": "Lorem ipsum jacket",
-      "image": [
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 12.45,
-      "discount": 10,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
-    {
-      "id": "91",
-      "name": "Lorem ipsum jacket",
-      "image": [
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 12.45,
-      "discount": 10,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
-    {
-      "id": "92",
-      "name": "Lorem ipsum jacket92",
-      "image": [
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 12.45,
-      "discount": 10,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
-    {
-      "id": "93",
-      "name": "Lorem ipsum jacket",
-      "image": [
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 12.45,
       "discount": 10,
       "qty": 1,
       "color": "",
@@ -182,6 +102,20 @@
       "qty": 1,
       "color": "",
       "size": ""
+    },
+    {
+      "id": "3",
+      "name": "Lorem ipsum jacket",
+      "image": [
+        "/assets/img/product/fashion/3.jpg",
+        "/assets/img/product/fashion/1.jpg",
+        "/assets/img/product/fashion/6.jpg",
+        "/assets/img/product/fashion/8.jpg",
+        "/assets/img/product/fashion/9.jpg"
+      ],
+      "price": 17.45,
+      "discount": 40,
+      "qty": 1
     }
   ],
   "compare": [],

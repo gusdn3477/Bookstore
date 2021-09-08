@@ -1,5 +1,4 @@
 import Nav from '../elements/ui/Nav';
-import Banner from '../elements/ui/Banner';
 import HeaderTop  from '../elements/ui/HeaderTop';
 
 export default function Header(){

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Rating from '../../ui/Rating';
 export default function CompareTable(){
 
-
+    /* 현재 단계에서 사용 X */
     let process = require('../../../../db/myProcess.json');
     const [compareDatas , setCompareDatas] = useState([]);
 

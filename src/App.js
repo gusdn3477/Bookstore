@@ -31,6 +31,7 @@ import ProductControl from './components/pages/Product/ProductControl'
 import Road from './components/pages/Road/Road';
 import Search from './components/pages/Search/Search';
 import OrderList from "./components/pages/Order/OrderList";
+import ProductModifiyAndDelete from "./components/pages/Product/ProductModifyandDelete";
 
 function App() {
   return (
@@ -54,7 +55,8 @@ function App() {
         <Route exact path="/road"><Road/></Route>
         <Route exact path="/search"><Search/></Route>
         <Route exact path="/orderlist"><OrderList/></Route>
-        
+        <Route exact path="/productmodify"><ProductModifiyAndDelete/></Route>
+      
         <Provider store={store}>
           <Route exact path="/reduxsample"><ReduxSample/></Route>
         </Provider>

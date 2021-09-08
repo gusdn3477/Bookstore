@@ -4,10 +4,9 @@ import {Link} from 'react-router-dom';
 export default function SideMenu() {
   
   const [menuData, setMenuData] = useState([]);
-  let process = require('../../../db/myProcess.json');
 
   useEffect(()=>{
-      fetch(`http://${process.IP}:${process.PORT}/sidemenu`)
+      fetch(`http://localhost:3005/sidemenu`)
       .then(res => {
           return res.json();
       })

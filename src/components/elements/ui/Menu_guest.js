@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 export default function Menu(){
 
     const [ menuData, setMenuData ] = useState([]);
-    let process = require('../../../db/myProcess.json');
     
     useEffect(() => {
-        fetch(`http://${process.IP}:${process.PORT}/menu`)
+        fetch(`http://localhost:3005/menu`)
         .then(res => {
             return res.json();
         })

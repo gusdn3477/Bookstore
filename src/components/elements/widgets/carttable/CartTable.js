@@ -21,7 +21,7 @@ export default function CartTable() {
     return(
         <div className="cart-main-area pt-90 pb-100">
             <div className="container">
-                <h3 className="cart-page-title">Your cart items</h3>
+                <h3 className="cart-page-title">장바구니</h3>
                 <div className="row">
                     <div className="col-12">
                         <div className="table-content table-responsive cart-table-content">

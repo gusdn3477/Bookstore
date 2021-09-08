@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import CartListView from '../../elements/ui/CartListView';
-import OrderListView from './OrderListView';
+import ProductModifyandDeleteView from './ProductModifyandDeleteView';
 
 export default function OrderListForm() {
 
@@ -22,7 +21,7 @@ export default function OrderListForm() {
     return(
         <div className="cart-main-area pt-90 pb-100">
             <div className="container">
-                <h3 className="cart-page-title">거래 내역입니다.</h3>
+                <h3 className="cart-page-title">상품에 대해 수정 및 삭제를 할 수 있습니다.</h3>
                 <div className="row">
                     <div className="col-12">
                         <div className="table-content table-responsive cart-table-content">
@@ -40,7 +39,7 @@ export default function OrderListForm() {
                                 <tbody>
                                     {
                                         cartDatas.map(item => (
-                                            <OrderListView
+                                            <ProductModifyandDeleteView
                                                 key = {item.id}
                                                 data = {item}
                                                 setCartDatas = {setCartDatas}

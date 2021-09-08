@@ -4,6 +4,7 @@ import React, { useEffect, useState} from 'react';
 
 export default function Brand(){
 
+    /* 현재 단계에서 사용 X */
     const [ newBrand, setNewBrand ] = useState([]);
     let process = require('../../../../db/myProcess.json');
 
