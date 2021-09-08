@@ -142,9 +142,9 @@
         "lifestyle",
         "men"
       ],
-      "title": "A guide to latest trends",
+      "title": "책 없는 방은 영혼 없는 육체와 같다.",
       "url": "/blog-details-standard",
-      "author": "TheUNIONGraphix",
+      "author": "-키케로-",
       "authorUrl": "/blog-standard"
     },
     {
@@ -153,9 +153,9 @@
       "category": [
         "lifestyle"
       ],
-      "title": "Five ways to lead a happy life",
+      "title": "가장 훌륭한 벗은 가장 좋은 책이다.",
       "url": "/blog-details-standard",
-      "author": "React",
+      "author": "-체스터필드-",
       "authorUrl": "/blog-standard"
     },
     {
@@ -164,9 +164,9 @@
       "category": [
         "lifestyle"
       ],
-      "title": "Tips on having a happy life",
+      "title": "집은 책으로, 정원은 꽃으로 가득 채워라.",
       "url": "/blog-details-standard",
-      "author": "Html5",
+      "author": "-엔듀르 랑그-",
       "authorUrl": "/blog-standard"
     }
   ],
@@ -241,38 +241,6 @@
     {
       "id": 5,
       "name": "일반"
-    }
-  ],
-  "brand": [
-    {
-      "id": 1,
-      "name": "JavaScript",
-      "img": "fab fa-js-square",
-      "content": "자바스크립트 힘들어요. 공부 싫어요"
-    },
-    {
-      "id": 2,
-      "name": "React",
-      "img": "fab fa-react",
-      "content": "리액트 제이에스. 알고보면 쉬워요."
-    },
-    {
-      "id": 3,
-      "name": "HTML5",
-      "img": "fab fa-html5",
-      "content": "HTML5 에이치티엠엘파이브 시멘틱코드"
-    },
-    {
-      "id": 4,
-      "name": "GitHub",
-      "img": "fab fa-github",
-      "content": "깃허브 아이콘 고양이인가? "
-    },
-    {
-      "id": 5,
-      "name": "CSS3",
-      "img": "fab fa-css3-alt",
-      "content": "CSS3 씨에스에스쑤리"
     }
   ],
   "product": [

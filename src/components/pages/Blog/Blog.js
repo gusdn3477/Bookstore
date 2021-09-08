@@ -7,7 +7,6 @@ export default function Blog(){
                  <section id="blog">
                  <div class="container">
                   <BlogTitle title ="Today's Blog"/>
-
                   <div class="row mt-5">
                     
                     <BlogItem/>

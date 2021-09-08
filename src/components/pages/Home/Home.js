@@ -10,7 +10,6 @@ export default function Home(){
         <div id="wrap">
         <Header/>
         <Banner/>
-        <Deal />
         <Blog/>
         <Footer/>
       </div>

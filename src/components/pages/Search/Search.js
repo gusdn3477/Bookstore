@@ -10,7 +10,7 @@ export default function Register(){
     return(
         <Fragment>
             <Header/>
-            <Bread breadName ="Search Page" />
+            <Bread breadName ="상품 검색" />
             <SearchForm />
             <Footer/>
         </Fragment>

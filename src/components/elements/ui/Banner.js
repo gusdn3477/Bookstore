@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import background from '../../../assets/img//books.jpg'
+import background from '../../../assets/img/books.jpg'
 export default function Banner(){
     return(
         <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
