@@ -6,7 +6,7 @@ export default function HeaderAdmin(){
     return (
         
         <header className="header-area clearfix">
-            {/*<HeaderTop/>*/}
+            <HeaderTop/>
             <Nav/>
             
     </header>

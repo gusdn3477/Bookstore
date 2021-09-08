@@ -1,40 +1,5 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "userId": "gusdn3477",
-      "password": "!ahdghksdmlqka1"
-    },
-    {
-      "id": 2,
-      "userId": "gusdn3477",
-      "password": "!ahdghksdmlqka1"
-    },
-    {
-      "id": 3,
-      "userId": "gusdn3477",
-      "password": "!ahdghksdmlqka1",
-      "name": "박현우",
-      "email": "gusdn3477@naver.com",
-      "phone": "010-4920-0306"
-    },
-    {
-      "id": 4,
-      "userId": "gusdn3477",
-      "password": "!ahdghksdmlqka1",
-      "name": "박현우",
-      "email": "gusdn3477@naver.com",
-      "phone": "010-4920-0306"
-    },
-    {
-      "id": 5,
-      "userId": "gusdn3477",
-      "password": "!ahdghksdmlqka1",
-      "name": "박현우",
-      "email": "gusdn3477@naver.com",
-      "phone": "010-4920-0306"
-    }
-  ],
+  "users": [],
   "size": [
     {
       "id": 1,
@@ -58,70 +23,6 @@
     }
   ],
   "cart": [
-    {
-      "id": "7",
-      "name": "Lorem ipsum fashion female coat",
-      "image": [
-        "/assets/img/product/fashion/7.jpg",
-        "/assets/img/product/fashion/5.jpg",
-        "/assets/img/product/fashion/2.jpg",
-        "/assets/img/product/fashion/4.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 55.5,
-      "discount": 40,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
-    {
-      "id": "8",
-      "name": "Lorem ipsum fashion jacket",
-      "image": [
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 29.85,
-      "discount": 10,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
-    {
-      "id": "9",
-      "name": "Lorem ipsum fashion female top",
-      "image": [
-        "/assets/img/product/fashion/9.jpg",
-        "/assets/img/product/fashion/7.jpg",
-        "/assets/img/product/fashion/5.jpg",
-        "/assets/img/product/fashion/2.jpg",
-        "/assets/img/product/fashion/4.jpg"
-      ],
-      "price": 35.6,
-      "discount": 0,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
-    {
-      "id": "10",
-      "name": "Lorem ipsum blender",
-      "image": [
-        "/assets/img/product/electronics/1.jpg",
-        "/assets/img/product/electronics/2.jpg",
-        "/assets/img/product/electronics/3.jpg",
-        "/assets/img/product/electronics/4.jpg",
-        "/assets/img/product/electronics/5.jpg"
-      ],
-      "price": 15.6,
-      "discount": 0,
-      "qty": 1,
-      "color": "",
-      "size": ""
-    },
     {
       "id": "15",
       "name": "Lorem ipsum microphone",
@@ -342,23 +243,6 @@
       "url": "/"
     },
     {
-      "children": [
-        {
-          "id": 1,
-          "name": "test01",
-          "url": "/test01"
-        },
-        {
-          "id": 2,
-          "name": "test02",
-          "url": "/test02"
-        },
-        {
-          "id": 3,
-          "name": "test03",
-          "url": "/test03"
-        }
-      ],
       "id": 2,
       "name": "Features",
       "url": "/features"
@@ -370,13 +254,13 @@
     },
     {
       "id": 4,
-      "name": "FAQs",
-      "url": "/faqs"
+      "name": "MYPAGE",
+      "url": "/mypage"
     },
     {
       "id": 5,
-      "name": "About",
-      "url": "/about"
+      "name": "ADMIN",
+      "url": "/admin"
     }
   ],
   "sidemenu": [
@@ -414,31 +298,27 @@
   "category": [
     {
       "id": 0,
-      "name": "All Categories"
+      "name": "전체"
     },
     {
       "id": 1,
-      "name": "fashion"
+      "name": "최신작"
     },
     {
       "id": 2,
-      "name": "men"
+      "name": "베스트셀러"
     },
     {
       "id": 3,
-      "name": "women"
+      "name": "유아용"
     },
     {
       "id": 4,
-      "name": "boy"
+      "name": "청소년용"
     },
     {
       "id": 5,
-      "name": "girl"
-    },
-    {
-      "id": 6,
-      "name": "oh ji wung"
+      "name": "일반"
     }
   ],
   "brand": [

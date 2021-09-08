@@ -42,7 +42,6 @@ export default function Home(){
     </div>
         
 </div>
-        <Blog/>
         <Footer/>
       </div>
 

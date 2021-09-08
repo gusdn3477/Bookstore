@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HeaderTop(){
 
     return(
@@ -9,7 +11,7 @@ export default function HeaderTop(){
                 <div className="language-currency-wrap">
 
                     <div className="same-language-currency language-style">
-                        <span>English <i className="fa fa-angle-down"></i></span>
+                        <span>3조 책방 <i className="fa fa-angle-down"></i></span>
                         <div className="lang-car-dropdown">
                             <ul>
                                 <li><button value="en">English</button></li>
@@ -31,13 +33,13 @@ export default function HeaderTop(){
                     </div>
 
                     <div className="same-language-currency">
-                        <p>Call Us 3965410</p>
+                        <p>Call Us 010-4920-0306</p>
                     </div>
 
                 </div>
 
                 <div className="header-offer">
-                    <p>Free delivery on order over <span>£0.00</span></p>
+                    <p>9월 15일까지 배송료 <span>무료!</span></p>
                 </div>
 
             </div>

@@ -26,6 +26,7 @@ import Test from './components/pages/Test/Test';
 import Login from './components/pages/User/Login';
 import Register from './components/pages/User/Register';
 import Admin from './components/pages/Admin/Admin'
+import ProductMake from './components/pages/Product/ProductMake'
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route exact path="/test"><Test/></Route>
         <Route exact path="/register"><Register/></Route>
         <Route exact path="/login"><Login/></Route>
+        <Route exact path="/productMake"><ProductMake/></Route>
         <Provider store={store}>
           <Route exact path="/reduxsample"><ReduxSample/></Route>
         </Provider>

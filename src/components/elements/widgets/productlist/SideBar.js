@@ -125,7 +125,7 @@ export default function SideBar({setCategoryName}){
                     </ul>
                 </div>
             </div>
-
+            {/*
             <div className="sidebar-widget mt-50">
                 <h4 className="pro-sidebar-title">Color </h4>
                 <div className="sidebar-widget-list mt-20">
@@ -159,6 +159,7 @@ export default function SideBar({setCategoryName}){
                 </div>
             </div>
 
+            
             <div className="sidebar-widget mt-40">
                 <h4 className="pro-sidebar-title">Size </h4>
                 <div className="sidebar-widget-list mt-20">
@@ -192,7 +193,6 @@ export default function SideBar({setCategoryName}){
                 </div>
             </div>
 
-
             <div className="sidebar-widget mt-50">
                 <h4 className="pro-sidebar-title">Tag </h4>
                 <div className="sidebar-widget-tag mt-25">
@@ -224,6 +224,7 @@ export default function SideBar({setCategoryName}){
                     </ul>
                 </div>
             </div>
+            */}
         </div>
     </div>
     );
