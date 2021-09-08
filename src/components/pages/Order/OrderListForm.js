@@ -7,6 +7,7 @@ export default function OrderListForm() {
 
     let process = require('../../../db/myProcess.json');
 
+    //orders 테이블로 바꿔야 함
     useEffect(()=>{
         fetch(`http://${process.IP}:${process.PORT}/cart`)
         .then(res => {

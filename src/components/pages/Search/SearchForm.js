@@ -17,11 +17,7 @@ export default function RegisterForm() {
         writer : '',
 
         userId: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        phone: '',
-        name: '',
+        name: ''
     })
 
     const [guideTxts, setGuideTxts] = useState({
@@ -49,11 +45,7 @@ export default function RegisterForm() {
         image : '',
         writer : '',
         userIdError: '',
-        emailError: '',
-        pwdError: '',
-        confirmPwd: '',
-        nameError: '',
-        phoneError: ''
+        nameError: ''
       })
 
 
@@ -63,51 +55,20 @@ export default function RegisterForm() {
     return userIdRegex.test(userId);
   }
 
-  const isEmail = email => {
-  const emailRegex = /^(([^<>()\].,;:\s@"]+(\.[^<>()\].,;:\s@"]+)*)|(".+"))@(([^<>()¥[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i; 
-
-    return emailRegex.test(email);
-  };
-
-  const isPwd = pass => {
-    const pwdRegex = /^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@$!%*#?&]).*$/;
-
-    return pwdRegex.test(pass);
-  }
-  
-  const isPhone = phone => {
-    const phoneRegex = /^[0-9\b -]{0,13}$/;
-    return phoneRegex.test(phone)
-  }
-
-  const confirmPassword = (pass, confirmPass) => {
-    return pass === confirmPass
-  }
-
       const onTextCheck = () => {
         let userIdError = "";
-        let emailError = "";
-        let pwdError = "";
-        let confirmPwd = "";
         let nameError = "";
-        let phoneError = "";
         
     
         if (!isUserId(values.userId)) userIdError = "아이디 형식을 확인 해 주세요.( 한글 불가 )";
-        if (!isEmail(values.email)) emailError = "email 형식이 아닙니다.";
-        if (!isPwd(values.password)) pwdError = "비밀번호 조건을 만족 할 수 없습니다.";
-        if (!confirmPassword(values.password, values.confirmPassword)) confirmPwd = "비밀번호가 일치하지 않습니다.";
-        if (values.userId === values.password) pwdError = "아이디를 비밀번호로 사용 할 수 없습니다."; 
-        if (!isPhone(values.phone)) phoneError = "휴대폰 형식이 아닙니다.";
-
         if (values.name.length === 0) nameError = "이름을 입력해주세요.";
     
         //console.log(userIdError, emailError, pwdError, confirmPwd, nameError, phoneError, userTypesError, useConfirmError)
         setError({
-          userIdError, emailError, pwdError, confirmPwd, nameError, phoneError
+          userIdError, nameError
         })
     
-        if (userIdError || emailError || pwdError || confirmPwd || nameError || phoneError ) return false;
+        if (userIdError || nameError ) return false;
         return true;
       }
 
