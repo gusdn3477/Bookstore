@@ -21,21 +21,11 @@ export default function Home(){
 
         <div className="login-form">
             <div className="mb-3">
-            <h3>상품 수정</h3>
-            <div>상품을 수정할 수 있습니다.</div>
+            <h3>상품 수정 및 삭제</h3>
+            <div>상품을 수정 및 삭제할 수 있습니다.</div>
         </div>
         <Link to="/productmake">
-                <button type="button" class="btn btn-color-orange admin-submit">상품 수정</button>
-        </Link>
-        </div>
-
-        <div className="login-form">
-            <div className="mb-3">
-            <h3>상품 삭제</h3>
-            <div>상품을 삭제할 수 있습니다.</div>
-        </div>
-        <Link to="/productmake">
-                <button type="button" class="btn btn-color-orange admin-submit">상품 삭제</button>
+                <button type="button" class="btn btn-color-orange admin-submit">상품 수정/삭제</button>
         </Link>
         </div>
         

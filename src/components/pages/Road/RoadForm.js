@@ -43,7 +43,7 @@ export default function RegisterForm() {
                                     <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                                     <div className="card-body">
                                     <div className="myaccount-info-wrapper">
-                                    상세주소 : 경기도 성남시 분당구 수내동 6-4
+                                    <h4>상세주소 : 경기도 성남시 분당구 수내동 6-4(티맥스 수내타워)</h4>
                                     </div>
                             </div>
                                     </div>

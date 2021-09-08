@@ -14,7 +14,7 @@ export default function MyAccountForm() {
                                 <div className="accordion-item single-my-account mb-20 card">
                                     <div className="panel-heading card-header" id="panelsStayOpen-headingTwo">
                                         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                            <h3 className="panel-title"><span>1 .</span> Change your password</h3>
+                                            <h3 className="panel-title"><span>1 .</span> 개인정보 수정</h3>
                                         </button>
                                     </div>
                                     <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingTwo">
@@ -24,7 +24,7 @@ export default function MyAccountForm() {
                                 <div className="accordion-item single-my-account mb-20 card">
                                     <div className="panel-heading card-header" id="panelsStayOpen-headingThree">
                                         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                            <h3 className="panel-title"><span>2 .</span> Modify your address book entries </h3>
+                                            <h3 className="panel-title"><span>2 .</span> 주문 확인 </h3>
                                         </button>
                                     </div>
                                     <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingThree">
