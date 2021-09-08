@@ -11,6 +11,8 @@ export default function RegisterForm() {
         ISBN : '',
         productName : '',
         stock : '',
+        startDate : '',
+        endDate : '',
         unitPrice : '',
         createdAt : '',
         image : '',
@@ -22,10 +24,11 @@ export default function RegisterForm() {
         productName : '',
         stock : '',
         unitPrice : '',
+        startDate : '',
+        endDate : '',
         createdAt : '',
         image : '',
-        writer : '',
-        userGuide : '최대 20자 까지 가능합니다.'
+        writer : ''
     });
 
     const [error, setError] = useState({
@@ -33,23 +36,18 @@ export default function RegisterForm() {
         productName : '',
         stock : '',
         unitPrice : '',
+        startDate : '',
+        endDate : '',
         createdAt : '',
         image : '',
-        writer : '',
-        userIdError: '',
-        nameError: ''
+        writer : ''
       })
-
-
-
-  const isUserId = userId => {
-    const userIdRegex = /^[a-z0-9_!@$%^&*-+=?"]{1,20}$/
-    return userIdRegex.test(userId);
-  }
 
       const onTextCheck = () => {
         let userIdError = "";
         let nameError = "";
+        let startDate = '';
+        let endDate = '';
         
         if (values.name.length === 0) nameError = "이름을 입력해주세요.";
     
@@ -117,7 +115,6 @@ export default function RegisterForm() {
     }
 
     return(
-
         <div className="myaccount-area pb-80 pt-100">
             <div className="container">
                 <div className="row">
@@ -165,15 +162,15 @@ export default function RegisterForm() {
                             <div>검색 시작 날짜</div>
                             <input 
                                 type="text"
-                                name="name"
-                                value={values.name}
+                                name="startDate"
+                                value={values.startDate}
                                 onChange={handleChangeForm}
                             />
                             <div>검색 종료 날짜</div>
                             <input 
                                 type="text"
-                                name="name"
-                                value={values.name}
+                                name="endDate"
+                                value={values.endDate}
                                 onChange={handleChangeForm}
                             />
                         </div>
