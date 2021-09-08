@@ -9,9 +9,6 @@ export default function Compare(){
         <Header/>
         <Bread breadName ="compare"/>
         <CompareTable/>
-     
-
-
         <Footer/>
         </Fragment>
     );

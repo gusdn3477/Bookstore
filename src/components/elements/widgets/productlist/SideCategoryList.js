@@ -15,7 +15,7 @@ export default function SideCategoryList({item, setCategoryName}){
 
     
     useEffect(() => {
-        fetch(`http://${process.IP}:${process.PORT}/product/`)
+        fetch(`http://${process.IP}:${process.PORT}/product`)
         .then(res => {
             return res.json();
         })

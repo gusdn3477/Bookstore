@@ -11,7 +11,7 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
 
 
     useEffect(() => {
-        fetch(`http://${process.IP}:${process.PORT}/product/`)
+        fetch(`http://${process.IP}:${process.PORT}/product`)
         .then(res => {
             return res.json();
         })

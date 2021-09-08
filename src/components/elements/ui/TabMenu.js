@@ -8,7 +8,7 @@ export default function TabMenu({setCategoryName, categoryName}){
     let process = require('../../../db/myProcess.json');
 
     useEffect(() => {
-        fetch(`http://${process.IP}:${process.PORT}/category`)
+        fetch(`http://localhost:3005/category`)
         .then(res => {
             return res.json();
         })

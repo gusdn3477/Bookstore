@@ -9,7 +9,7 @@ export default function Brand(){
     let process = require('../../../../db/myProcess.json');
 
     useEffect(() => {
-        fetch(`http://${process.IP}:${process.PORT}/brand`)
+        fetch(`http://localhost:3005/brand`)
         .then(res => {
             return res.json();
         })

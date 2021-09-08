@@ -13,10 +13,8 @@ export default function ProductDetail(){
 
     
     let process = require('../../../db/myProcess.json');
-
-    console.log("경로 : " +`http://${process.IP}:${process.PORT}/product/${id}`);
   
-    useEffect(()=>{
+    useEffect((id)=>{
         fetch(`http://${process.IP}:${process.PORT}/product/${id}`)
         .then(res => {
             return res.json();
