@@ -10,6 +10,7 @@ import "./assets/css/style.css";
 import "./assets/css/animate.css";
 import "./assets/css/bootstrap.css";
 import "./assets/css/googlefont.css";
+import "./assets/css/registerChoice.css";
 import "./assets/icons8/css/line-awesome.min.css";
 import ProductDetail from "./components/pages/ProductDetail/ProductDetail";
 import ToTop from './utilities/ToTop';
@@ -24,6 +25,7 @@ import store from './redux/store';
 import Test from './components/pages/Test/Test';
 import Login from './components/pages/User/Login';
 import Register from './components/pages/User/Register';
+import Admin from './components/pages/Admin/Admin'
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
     <ToTop>
       <Switch>
         <Route exact path="/"><Home /></Route>
+        <Route exact path="/admin"><Admin /></Route>
         <Route exact path="/compare"><Compare/></Route>   
         <Route exact path="/cart"><Cart/></Route>
         <Route exact path ="/wishlist"><WishList/></Route>

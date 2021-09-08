@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useHistory } from "react-router";
 
-export default function LoginForm() {
+export default function RegisterForm() {
 
     const gogo = useHistory();
 
@@ -11,24 +11,18 @@ export default function LoginForm() {
         userId: '',
         email: '',
         password: '',
-        phone: '',
-        name: '',
     })
 
     const [guideTxts, setGuideTxts] = useState({
         userGuide : '최대 20자 까지 가능합니다.',
         emailGuide : '이메일 형식에 맞게 작성해 주세요.',
-        pwdGuide : '숫자와 문자를 조합해서 최소 8글자는 입력해 주세요.',
-        nameGuide : '',
-        phoneGuide : '. 을 입력하지 말아 주세요.'
+        pwdGuide : '숫자와 문자를 조합해서 최소 8글자는 입력해 주세요.'
     });
 
     const [error, setError] = useState({
         userIdError: '',
         emailError: '',
-        pwdError: '',
-        nameError: '',
-        phoneError: ''
+        pwdError: ''
       })
 
 
@@ -50,26 +44,19 @@ export default function LoginForm() {
     return pwdRegex.test(pass);
   }
   
-  const isPhone = phone => {
-    const phoneRegex = /^[0-9\b -]{0,13}$/;
-    return phoneRegex.test(phone)
-  }
-
       const onTextCheck = () => {
-        let userIdError = "";
+        let emailError = "";
         let pwdError = "";
-        
     
-        if (!isUserId(values.userId)) userIdError = "아이디 형식을 확인 해 주세요.( 한글 불가 )";
+        if (!isEmail(values.email)) emailError = "email 형식이 아닙니다.";
         if (!isPwd(values.password)) pwdError = "비밀번호 조건을 만족 할 수 없습니다.";
-        if (values.userId === values.password) pwdError = "아이디를 비밀번호로 사용 할 수 없습니다.";
     
         //console.log(userIdError, emailError, pwdError, confirmPwd, nameError, phoneError, userTypesError, useConfirmError)
         setError({
-          userIdError, pwdError
+          emailError, pwdError
         })
     
-        if (userIdError || pwdError) return false;
+        if (emailError || pwdError ) return false;
         return true;
       }
 
@@ -102,18 +89,18 @@ export default function LoginForm() {
 
         else {
         
-            fetch(`http://${process.IP}:${process.PORT}/users`,{
+            fetch(`/user-service/login`,{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                     id : usersDatas.length + 1,
-                    userId: values.userId,
+                    email: values.email,
                     password: values.password
                 }),
-            }).
-            then(res => res.json())
+            })
+            .then(res => res.json())
             .then((res) => {
                 if(res.token){
                     localStorage.setItem("token", res.token);
@@ -152,20 +139,20 @@ export default function LoginForm() {
                     
                     <div className="col-lg-12 col-md-12">
                         <div className="billing-info">
-                            <label>Id</label>
+                            <label>email</label>
                             <input 
                                 type="text"
-                                name="userId"
-                                value={values.userId}
+                                name="email"
+                                value={values.email}
                                 onChange={handleChangeForm}
                                 // placeholder="ID를 입력해 주세요."
                             />
                         </div>
                     </div>
                     {
-                        error.userIdError 
+                        error.emailError 
                             ? 
-                                <div style={{ color: "red", fontSize: "10px", margin: '-5px 0 10px 15px' }}>{error.userIdError}</div>
+                                <div style={{ color: "red", fontSize: "10px", margin: '-5px 0 10px 15px' }}>{error.emailError}</div>
                             :
                                 <div style={{ color: "gray", fontSize: "10px", margin: '-5px 0 10px 15px' }}>{guideTxts.userGuide}</div>
                     }
