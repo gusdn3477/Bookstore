@@ -26,15 +26,8 @@ export default function ProDetRgtMiddle() {
     
     return (
         <Fragment>
-            <ColorAndSize 
-                vData = {varData.variation}
-                setColor = {setColor}
-                setsize = {setSize}
-            />
             <AddBuyAndCart 
                 data = {varData}
-                color = {color}
-                size = {size}
             /> 
         </Fragment>
     

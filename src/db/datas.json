@@ -249,16 +249,16 @@
     },
     {
       "id": 3,
-      "name": "MYPAGE",
-      "url": "/mypage"
-    },
-    {
-      "id": 4,
       "name": "ADMIN",
       "url": "/admin"
     },
     {
       "id": 4,
+      "name": "MYPAGE",
+      "url": "/myaccount"
+    },
+    {
+      "id": 5,
       "name": "찾아오시는 길",
       "url": "/road"
     }

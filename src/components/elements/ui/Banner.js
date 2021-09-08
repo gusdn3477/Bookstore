@@ -11,9 +11,6 @@ export default function Banner(){
                   <div className="carousel-item active" style={{backgroundImage: `url(${background})`}}>
                     <div className="container">
                       <div className="carousel-caption text-start">
-                        <h1>3조 프로젝트</h1>
-                        <p>3조가 운영하는 사이트에서 책을 구매해 보세요.</p>
-                        <Link to="/register"><p className="btn btn-lg btn-primary">시작하기!</p></Link>
                       </div>
                     </div>
                   </div>

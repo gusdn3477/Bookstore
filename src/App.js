@@ -29,6 +29,7 @@ import Admin from './components/pages/Admin/Admin'
 import ProductMake from './components/pages/Product/ProductMake'
 import ProductControl from './components/pages/Product/ProductControl'
 import Road from './components/pages/Road/Road';
+import Search from './components/pages/Search/Search';
 
 function App() {
   return (
@@ -50,7 +51,7 @@ function App() {
         <Route exact path="/productMake"><ProductMake/></Route>
         <Route exact path="/productcontrol"><ProductControl/></Route>
         <Route exact path="/road"><Road/></Route>
-        
+        <Route exact path="/search"><Search/></Route>
         
         <Provider store={store}>
           <Route exact path="/reduxsample"><ReduxSample/></Route>
