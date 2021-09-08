@@ -21,14 +21,14 @@ export default function BlogItem(){
     
     <div class="col-12 col-md-4 mb-4">
         
-        <Link to = {`/blogdetail/${item.id}` } >
+        <Link to = {`/productlist` } >
         <div className="blogImg" style ={{backgroundImage : `url(${item.image})`, backgroundSize:"cover"}}></div>     
         </Link>
 
 
         <div className="blogTxt">
-           <Link to ={`/blogdetail/${item.id}` } ><p className="blogTitle">{item.title}</p></Link>
-            <Link to = {`/blogdetail/${item.authorUrl}`}><p className="blogAuth">{item.author}</p></Link>
+           <Link to ={`/productlist` } ><p className="blogTitle">{item.title}</p></Link>
+            <Link to = {`/productlist`}><p className="blogAuth">{item.author}</p></Link>
         </div>
 
     </div>
