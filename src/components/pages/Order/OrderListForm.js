@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import CartListView from '../../elements/ui/CartListView';
 import OrderListView from './OrderListView';
 
 export default function OrderListForm() {
@@ -8,7 +7,7 @@ export default function OrderListForm() {
 
     let process = require('../../../db/myProcess.json');
 
-    //orders 테이블로 바꿔야 함
+    //추후에 orders 테이블로 바꿔야 함
     useEffect(()=>{
         fetch(`http://${process.IP}:${process.PORT}/cart`)
         .then(res => {
@@ -18,11 +17,10 @@ export default function OrderListForm() {
             setCartDatas(data);
         });
     },[process.IP, process.PORT]);
-
     return(
         <div className="cart-main-area pt-90 pb-100">
             <div className="container">
-                <h3 className="cart-page-title">거래 내역입니다.</h3>
+                <h3 className="cart-page-title">주문내역 입니다.</h3>
                 <div className="row">
                     <div className="col-12">
                         <div className="table-content table-responsive cart-table-content">
@@ -30,11 +28,11 @@ export default function OrderListForm() {
                                 <thead>
                                     <tr>
                                         <th>사진</th>
-                                        <th>책 제목</th>
+                                        <th>주문번호</th>
                                         <th>가격</th>
                                         <th>갯수</th>
                                         <th>총 가격</th>
-                                        <th>삭제하기</th>
+                                        <th>주문 일자</th>
                                     </tr>
                                 </thead>
                                 <tbody>

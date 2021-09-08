@@ -15,10 +15,6 @@ export default function RegisterForm() {
         createdAt : '',
         image : '',
         writer : '',
-        
-        userId: '',
-        email: '',
-        password: '',
     })
 
     const [guideTxts, setGuideTxts] = useState({
@@ -52,7 +48,6 @@ export default function RegisterForm() {
         let emailError = "";
         let pwdError = "";
     
-        //console.log(userIdError, emailError, pwdError, confirmPwd, nameError, phoneError, userTypesError, useConfirmError)
         setError({
           emailError, pwdError
         })
@@ -60,18 +55,6 @@ export default function RegisterForm() {
         if (emailError || pwdError ) return false;
         return true;
       }
-    let process = require('../../../db/myProcess.json');
-
-    useEffect(()=>{
-        fetch(`http://${process.IP}:${process.PORT}/users`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            setUsersDatas(data);
-            console.log(data);
-        });
-    },[process.IP, process.PORT]);
 
     const handleChangeForm = (e) => {
         setValues({ 
@@ -155,7 +138,7 @@ export default function RegisterForm() {
                             <label>ISBN</label>
                             <input 
                                 type="text"
-                                name="productName"
+                                name="ISBN"
                                 value={values.ISBN}
                                 onChange={handleChangeForm}
                                 // placeholder="ID를 입력해 주세요."

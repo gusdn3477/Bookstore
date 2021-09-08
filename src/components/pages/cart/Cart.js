@@ -10,7 +10,6 @@ export default function Cart(){
      <Fragment>
         <Header/>   
         <Bread breadName ="Cart"/>
-
         <CartTable/>
         <Footer/>
     </Fragment>

@@ -5,23 +5,16 @@ export default function CartListView({data, setCartDatas}) {
 
     const [count, setCount] = useState(data.qty);
 
-    const handleCountAdd = () => {
-        setCount(count+1);
-    }
-
-    const handleCountDec = () => {
-        count > 1 ? setCount(count-1) : alert("최소 수량은 1개 입니다.")
-    }
-
     let process = require('../../../db/myProcess.json');
 
+    //지우고 새로고침 하는 부분 => 근데 삭제 필요 없다고 함
     const handleDelete = (id) => {
-
-        fetch(`http://${process.IP}:${process.PORT}/cart/${id}`,{
+        //확실하지 않음
+        fetch(`http://${process.IP}:${process.PORT}/${data.userId}/orders`,{
             method: "DELETE"
         }).then(
             alert("삭제 되었습니다!"),
-            fetch(`http://${process.IP}:${process.PORT}/cart`)
+            fetch(`http://${process.IP}:${process.PORT}/orders`)
             .then(res => {
                 return res.json();
             })
@@ -29,27 +22,27 @@ export default function CartListView({data, setCartDatas}) {
                 setCartDatas(data);
             })
         )
-       
     }
 
     return(
         <tr>
         <td className="product-thumbnail">
-            <Link to={`/productdetail/${data.id}`}><img className="img-fluid" src="" alt=""/></Link>
-        </td>
-        <td className="product-name">
-            <a href="/product/2">{data.name}</a>
+            <Link to={`/catalog/${data.productId}`}><img className="img-fluid" src="" alt=""/></Link>
         </td>
         <td className="product-price-cart">
-            <span className="amount">{data.price}</span>
+            <span className="orderid">{data.orderId}</span>
         </td>
-        <td className="product-quantity">
-            <div className="cart-plus-minus">
-                <input className="cart-plus-minus-box" type="text" readonly="" value={count} />
-            </div>
+        <td className="product-price-cart">
+            <span className="amount">{data.unitPrice}</span>
         </td>
-        <td className="product-subtotal">{(data.price * count).toFixed(2)}</td>
+        <td className="product-price-cart">
+            <span className="amount">{data.qty}</span>
+        </td>
+        <td className="product-subtotal">{data.totalPrice}</td>
+        <td className="product-date">{data.createdAt}</td>
+        {/*
         <td className="product-remove"><button onClick={()=>handleDelete(data.id)}><i className="fa fa-times"></i></button></td>
+        */}
     </tr>
                 
 

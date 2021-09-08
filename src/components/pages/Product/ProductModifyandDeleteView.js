@@ -28,8 +28,7 @@ export default function CartListView({data, setCartDatas}) {
             .then(data => {
                 setCartDatas(data);
             })
-        )
-       
+        )  
     }
 
     return(
