@@ -190,24 +190,23 @@ export default function RegisterForm() {
                     </div>
                     <div className="col-lg-12 col-md-12">
                         <div className="billing-info">
-                            <label>이미지</label> {/* 타입 변경 요먕 */}
-                            <input 
-                                type="text"
-                                name="image"
-                                value={values.image}
-                                onChange={handleChangeForm}
-                                // placeholder="ID를 입력해 주세요."
-                            />
-                        </div>
-                    </div>
-
-                    <div className="col-lg-12 col-md-12">
-                        <div className="billing-info">
                             <label>작가</label>
                             <input 
                                 type="text"
                                 name="writer"
                                 value={values.writer}
+                                onChange={handleChangeForm}
+                                // placeholder="ID를 입력해 주세요."
+                            />
+                        </div>
+                    </div>
+                    <div className="col-lg-12 col-md-12">
+                        <div className="billing-info">
+                            <label>이미지</label> {/* 타입 변경 요먕 */}
+                            <input 
+                                type="text"
+                                name="image"
+                                value={values.image}
                                 onChange={handleChangeForm}
                                 // placeholder="ID를 입력해 주세요."
                             />

@@ -1,10 +1,6 @@
 import React from 'react';
 import HeaderAdmin from '../../../components/layout/Header_admin';
-import Deal from '../../../components/pages/deal/Deal';
-import Brand from '../../../components/elements/widgets/brand/Brand';
-import Blog from '../Blog/Blog';
 import Footer from '../../layout/Footer';
-import Banner from '../../elements/ui/Banner';
 import { Link } from 'react-router-dom';
 
 export default function Home(){

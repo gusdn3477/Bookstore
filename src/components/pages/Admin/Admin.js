@@ -25,7 +25,7 @@ export default function ADMIN(){
         <h3>거래내역 확인</h3>
         <div>현재까지 이뤄진 거래내역을 확인할 수 있습니다.</div>
     </div>
-    <Link to="/ProductMake">
+    <Link to="/orderlist">
         <button type="button" class="btn btn-color-orange admin-submit">거래내역 확인</button>
     </Link>
     </div>

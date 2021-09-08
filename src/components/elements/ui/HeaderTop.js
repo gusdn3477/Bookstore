@@ -22,7 +22,7 @@ export default function HeaderTop(){
                     </div>
 
                     <div className="header-offer">
-                        <p>9월 15일까지 배송료 <span>무료!</span></p>
+                        <p>9월 15일까지 배송비 <span>무료!</span></p>
                     </div>
                 </div>
                 <div>
