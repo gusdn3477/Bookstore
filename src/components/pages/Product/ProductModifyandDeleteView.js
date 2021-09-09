@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import React, {useState} from 'react';
 
-export default function CartListView({data, setCartDatas}) {
+export default function ProductModifyandDeleteView({data, setCartDatas}) {
 
     const [count, setCount] = useState(data.qty);
 
@@ -17,11 +17,11 @@ export default function CartListView({data, setCartDatas}) {
 
     const handleDelete = (id) => {
 
-        fetch(`http://${process.IP}:${process.PORT}/cart/${id}`,{
+        fetch(`/catalog-service/catalogs/${id}`,{
             method: "DELETE"
         }).then(
             alert("삭제 되었습니다!"),
-            fetch(`http://${process.IP}:${process.PORT}/cart`)
+            fetch(`/catalog-service/catalogs/${id}`)
             .then(res => {
                 return res.json();
             })
@@ -37,11 +37,10 @@ export default function CartListView({data, setCartDatas}) {
             <Link to={`/productdetail/${data.id}`}><img className="img-fluid" src="" alt=""/></Link>
         </td>
         <td className="product-name">
-            <a href="/product/2">{data.name}</a>
+            <a href="/product/2">{data.productName}</a>
         </td>
         <td className="product-price-cart">
-            <span className="amount old">{(data.price * ((100+data.discount)/100)).toFixed(2)}</span>
-            <span className="amount">{data.price}</span>
+            <span className="amount">{data.unitPrice}</span>
         </td>
         <td className="product-quantity">
             <div className="cart-plus-minus">
@@ -50,7 +49,7 @@ export default function CartListView({data, setCartDatas}) {
                 <button className="inc qtybutton" onClick={()=>handleCountAdd()}>+</button>
             </div>
         </td>
-        <td className="product-subtotal">{(data.price * count).toFixed(2)}</td>
+        <td className="product-subtotal">{data.totalPrice}</td>
         <td className="product-remove"><button onClick={()=>handleDelete(data.id)}><i className="fa fa-times"></i></button></td>
     </tr>
                 

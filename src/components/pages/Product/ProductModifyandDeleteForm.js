@@ -9,7 +9,7 @@ export default function OrderListForm() {
 
     //orders 테이블로 바꿔야 함
     useEffect(()=>{
-        fetch(`http://${process.IP}:${process.PORT}/cart`)
+        fetch(`/catalog-service/catalogs`)
         .then(res => {
             return res.json();
         })
@@ -38,7 +38,7 @@ export default function OrderListForm() {
                                 </thead>
                                 <tbody>
                                     {
-                                        cartDatas.map(item => (
+                                        cartDatas.length > 0 && cartDatas.map(item => (
                                             <ProductModifyandDeleteView
                                                 key = {item.id}
                                                 data = {item}
