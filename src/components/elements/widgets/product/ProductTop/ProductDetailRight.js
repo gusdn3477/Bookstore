@@ -12,7 +12,7 @@ export default function ProductDetailRight() {
     var process = require('../../../../../db/myProcess.json');
 
     useEffect(()=>{
-        fetch(`http://${process.IP}:${process.PORT}/product/${id}`)
+        fetch(`/catalog-service/catalogs/${id}`)
         .then(res => {
             return res.json();
         })
@@ -25,12 +25,9 @@ export default function ProductDetailRight() {
     return (
         <div className="col-lg-6 col-md-6">
             <div className="product-details-content ml-70">
-
                 <ProDetRgtTop 
-                    name = {datas.name}
-                    price = {datas.price}
-                    rating = {datas.rating}
-                    txt = {datas.shortDescription}
+                    name = {datas.productName}
+                    price = {datas.unitPrice}
                 />
                 <ProDetRgtMiddle />
                  <ProDetRgtBottom /> 

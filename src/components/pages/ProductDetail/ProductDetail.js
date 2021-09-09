@@ -15,7 +15,7 @@ export default function ProductDetail(){
     let process = require('../../../db/myProcess.json');
   
     useEffect((id)=>{
-        fetch(`http://${process.IP}:${process.PORT}/product/${id}`)
+        fetch(`/catalog/${id}`)
         .then(res => {
             return res.json();
         })
