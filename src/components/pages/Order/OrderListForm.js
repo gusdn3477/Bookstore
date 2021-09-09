@@ -9,7 +9,7 @@ export default function OrderListForm() {
 
     //추후에 orders 테이블로 바꿔야 함
     useEffect(()=>{
-        fetch(`/cart`)
+        fetch(`/cart-service/carts`)
         .then(res => {
             return res.json();
         })
