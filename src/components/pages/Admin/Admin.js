@@ -8,7 +8,7 @@ export default function ADMIN(){
     return(
         <div id="wrap">
         <Header/>
-        <Bread breadName ="ADMIN PAGE" />
+        <Bread breadName ="ADMIN" />
         <div class="Container">
         <div className="login-form">
     <div className="mb-3">

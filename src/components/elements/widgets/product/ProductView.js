@@ -11,7 +11,7 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
 
 
     useEffect(() => {
-        fetch(`http://${process.IP}:${process.PORT}/product`)
+        fetch(`/catalog`)
         .then(res => {
             return res.json();
         })
@@ -28,17 +28,9 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
       )
     : newData;
 
-    const handleDelete = (id) => {
-        fetch(`http://${process.IP}:${process.PORT}/wish/${id}`,{
-            method: "DELETE"
-        }).then(
-            alert("삭제되었습니다.")
-        )
-    }
-
     const hanlePutWishList = (id) => {
         
-        fetch(`http://${process.IP}:${process.PORT}/product/${id}`)
+        fetch(`/cart/${id}`)
         .then(res => {
             return res.json();
         })
@@ -87,7 +79,6 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
         }).then(
             alert("success")
         )
-
     }
 
     // const searchData = newData.filter(index => (
@@ -98,18 +89,10 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
         <div className= {`col-xl-${columnNumber} col-md-6 col-lg-3 col-sm-6 `} key={item.id}>
         <div className="product-wrap mb-25">
             <div className="product-img">
-                <Link to={`/productdetail/${item.id}`}>
+                <Link to={`/category/${item.id}`}>
                     <img className="default-img" src="assets/img/product/fashion/8.jpg" alt="" />
                     <img className="hover-img" src="/assets/img/product/fashion/6.jpg" alt="" />
                 </Link>
-                <div className="product-img-badges">
-                    {
-                        item.discount > 0 ? <span className="pink">{item.discount}%</span> : ''
-                    }
-                    {
-                        item.new ? <span className="purple">new</span> : ''
-                    }
-                </div>
                 <div className="product-action">
                     <div className="pro-same-action pro-wishlist">
                         <button
@@ -137,13 +120,6 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
             {/* 여기부터 제목, 평점 부분 */}
             <div className="product-content text-center">
                 <h3><Link to={`/productdetail/${item.id}`}>{item.productName}</Link></h3>
-                <div className="product-rating">
-                    {item.rating && item.rating > 0 ? (
-                        <Rating ratingValue={item.rating} />
-                    ) : (
-                    ""
-                )}
-                </div>
                 <div className="product-price">
                     <span>{item.unitPrice}</span> 
                 </div>
