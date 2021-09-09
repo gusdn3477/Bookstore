@@ -81,9 +81,7 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
         )
     }
 
-    // const searchData = newData.filter(index => (
-    //    index.category[0] === categoryName || index.category[1] === categoryName || index.category[2] === categoryName
-    // ))
+    //예외 발생 가능할 것 같음. 이후에 처리해보기
     const productList = searchData.map((item, index) => (
 
         <div className= {`col-xl-${columnNumber} col-md-6 col-lg-3 col-sm-6 `} key={item.id}>

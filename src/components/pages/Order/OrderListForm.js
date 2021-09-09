@@ -36,15 +36,15 @@ export default function OrderListForm() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {
-                                        cartDatas.map(item => (
-                                            <OrderListView
-                                                key = {item.id}
-                                                data = {item}
-                                                setCartDatas = {setCartDatas}
-                                            />
-                                        ))
-                                    }
+                                {
+                                    cartDatas.length > 0 && cartDatas.map(item => (
+                                        <OrderListView
+                                            key = {item.id}
+                                            data = {item}
+                                            setCartDatas = {setCartDatas}
+                                        />
+                                    ))
+                                }
                                 </tbody>
                             </table>
                         </div>

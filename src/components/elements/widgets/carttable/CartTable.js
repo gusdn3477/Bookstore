@@ -37,7 +37,7 @@ export default function CartTable() {
                                 </thead>
                                 <tbody>
                                     {
-                                        cartDatas.map(item => (
+                                        cartDatas.length > 0 && cartDatas.map(item => (
                                             <CartListView
                                                 key = {item.id}
                                                 data = {item}
