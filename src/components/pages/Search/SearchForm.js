@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useHistory } from "react-router";
 
-export default function RegisterForm() {
+export default function SearchForm() {
 
     const gogo = useHistory();
 
