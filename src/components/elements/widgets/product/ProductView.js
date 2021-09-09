@@ -11,7 +11,7 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
 
 
     useEffect(() => {
-        fetch(`/catalog`)
+        fetch(`/catalog-service/catalogs`)
         .then(res => {
             return res.json();
         })
@@ -119,7 +119,7 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
             </div>
             {/* 여기부터 제목, 평점 부분 */}
             <div className="product-content text-center">
-                <h3><Link to={`/productdetail/${item.id}`}>{item.productName}</Link></h3>
+                <h3><Link to={`/productdetail/${item.id}`}><div style={{color:"black"}}>{item.productName}</div></Link></h3>
                 <div className="product-price">
                     <span>{item.unitPrice}</span> 
                 </div>
