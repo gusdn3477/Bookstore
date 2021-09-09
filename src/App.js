@@ -32,6 +32,7 @@ import Road from './components/pages/Road/Road';
 import Search from './components/pages/Search/Search';
 import OrderList from "./components/pages/Order/OrderList";
 import ProductModifiyAndDelete from "./components/pages/Product/ProductModifyandDelete";
+import UserList from './components/pages/User/UserList';
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Route exact path="/search"><Search/></Route>
         <Route exact path="/orderlist"><OrderList/></Route>
         <Route exact path="/productmodify"><ProductModifiyAndDelete/></Route>
+        <Route exact path="/UserList"><UserList/></Route>
       
         <Provider store={store}>
           <Route exact path="/reduxsample"><ReduxSample/></Route>

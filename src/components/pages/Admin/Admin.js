@@ -18,19 +18,30 @@ export default function ADMIN(){
     <Link to="/productcontrol">
         <button type="button" class="btn btn-color-orange admin-submit">상품 관리</button>
     </Link>
+    </div>
+
+    <div className="login-form">
+        <div className="mb-3">
+            <h3>거래내역 확인</h3>
+            <div>현재까지 이뤄진 거래내역을 확인할 수 있습니다.</div>
+        </div>
+        <Link to="/orderlist">
+        <button type="button" class="btn btn-color-orange admin-submit">거래내역 확인</button>
+        </Link>
+    </div>
+
+    <div className="login-form">
+        <div className="mb-3">
+            <h3>사용자 관리</h3>
+            <div>사용자를 관리할 수 있습니다.</div>
+        </div>
+        <Link to="/userlist">
+        <button type="button" class="btn btn-color-orange admin-submit">사용자 관리</button>
+        </Link>
+    </div>
 </div>
 
-<div className="login-form">
-    <div className="mb-3">
-        <h3>거래내역 확인</h3>
-        <div>현재까지 이뤄진 거래내역을 확인할 수 있습니다.</div>
-    </div>
-    <Link to="/orderlist">
-        <button type="button" class="btn btn-color-orange admin-submit">거래내역 확인</button>
-    </Link>
-    </div>
-        
-</div>
+
         <Footer/>
       </div>
 
