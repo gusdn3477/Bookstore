@@ -14,20 +14,17 @@ export default function RegisterForm() {
         createdAt : '',
         image : '',
         writer : '',
-        qty : '',
+        stock : '',
     })
 
     const [guideTxts, setGuideTxts] = useState({
-        ISBN : '',
+        ISBN : '최대 20자 까지 가능합니다.',
         productName : '최대 20자 까지 가능합니다.',
         stock : '숫자로 입력해 주세요.',
         unitPrice : '숫자로 입력해 주세요.',
         createdAt : '날짜 형식에 맞춰 주세요.',
         image : '',
-        writer : '최대 10자까지 입력 가능합니다.',
-        userGuide : '최대 20자 까지 가능합니다.',
-        emailGuide : '이메일 형식에 맞게 작성해 주세요.',
-        pwdGuide : '숫자와 문자를 조합해서 최소 8글자는 입력해 주세요.'
+        writer : '최대 10자까지 입력 가능합니다.'
     });
 
     const [error, setError] = useState({
@@ -42,14 +39,18 @@ export default function RegisterForm() {
 
   
       const onTextCheck = () => {
-        let emailError = "";
-        let pwdError = "";
+        let ISBNError = ""
+        let productNameError = "";
+        let stockError = "";
+        let unitPriceError = "";
+        let createdAtError = "";
+        let writerError = "";
     
         setError({
-          emailError, pwdError
+          ISBNError, productNameError, stockError, unitPriceError, createdAtError, writerError
         })
     
-        if (emailError || pwdError ) return false;
+        if (ISBNError || productNameError || stockError || unitPriceError || createdAtError || writerError ) return false;
         return true;
       }
 
@@ -91,7 +92,7 @@ export default function RegisterForm() {
                     gogo.push("/");
                 }
                 else{
-                    alert("로그인 정보를 확인하세요");
+                    alert("입력된 정보를 확인하세요");
                 }
             }
             )
