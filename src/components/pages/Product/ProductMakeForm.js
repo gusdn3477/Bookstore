@@ -10,21 +10,21 @@ export default function RegisterForm() {
     const [values, setValues] = useState({
         ISBN : '',
         productName : '',
-        stock : '',
         unitPrice : '',
         createdAt : '',
         image : '',
         writer : '',
+        qty : '',
     })
 
     const [guideTxts, setGuideTxts] = useState({
         ISBN : '',
-        productName : '',
-        stock : '',
-        unitPrice : '',
-        createdAt : '',
+        productName : '최대 20자 까지 가능합니다.',
+        stock : '숫자로 입력해 주세요.',
+        unitPrice : '숫자로 입력해 주세요.',
+        createdAt : '날짜 형식에 맞춰 주세요.',
         image : '',
-        writer : '',
+        writer : '최대 10자까지 입력 가능합니다.',
         userGuide : '최대 20자 까지 가능합니다.',
         emailGuide : '이메일 형식에 맞게 작성해 주세요.',
         pwdGuide : '숫자와 문자를 조합해서 최소 8글자는 입력해 주세요.'
@@ -37,10 +37,7 @@ export default function RegisterForm() {
         unitPrice : '',
         createdAt : '',
         image : '',
-        writer : '',
-        userIdError: '',
-        emailError: '',
-        pwdError: ''
+        writer : ''
       })
 
   
@@ -71,16 +68,20 @@ export default function RegisterForm() {
         if (!valid) console.error("retry");
 
         else {
-        
             fetch(`/catalogs-service/catalogs`,{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    id : usersDatas.length + 1,
-                    email: values.email,
-                    password: values.password
+                    ISBN : '',
+                    productName : '',
+                    stock : '',
+                    qty : '',
+                    unitPrice : '',
+                    createdAt : '',
+                    image : '',
+                    writer : '',
                 }),
             })
             .then(res => res.json())
@@ -128,7 +129,7 @@ export default function RegisterForm() {
                                 name="productName"
                                 value={values.productName}
                                 onChange={handleChangeForm}
-                                // placeholder="ID를 입력해 주세요."
+                                placeholder="상품 제목을 입력해 주세요."
                             />
                         </div>
                     </div>
@@ -141,7 +142,7 @@ export default function RegisterForm() {
                                 name="ISBN"
                                 value={values.ISBN}
                                 onChange={handleChangeForm}
-                                // placeholder="ID를 입력해 주세요."
+                                placeholder="ISBN을 입력해 주세요."
                             />
                         </div>
                     </div>
@@ -154,7 +155,7 @@ export default function RegisterForm() {
                                 name="stock"
                                 value={values.stock}
                                 onChange={handleChangeForm}
-                                // placeholder="ID를 입력해 주세요."
+                                placeholder="재고를 입력해 주세요."
                             />
                         </div>
                     </div>
@@ -167,7 +168,7 @@ export default function RegisterForm() {
                                 name="unitPrice"
                                 value={values.unitPrice}
                                 onChange={handleChangeForm}
-                                // placeholder="ID를 입력해 주세요."
+                                placeholder="한 권당 가격을 입력해 주세요."
                             />
                         </div>
                     </div>
@@ -179,7 +180,7 @@ export default function RegisterForm() {
                                 name="writer"
                                 value={values.writer}
                                 onChange={handleChangeForm}
-                                // placeholder="ID를 입력해 주세요."
+                                placeholder="작가 이름을 입력해 주세요."
                             />
                         </div>
                     </div>
@@ -191,7 +192,7 @@ export default function RegisterForm() {
                                 name="image"
                                 value={values.image}
                                 onChange={handleChangeForm}
-                                // placeholder="ID를 입력해 주세요."
+                                placeholder="이미지를 등록해 주세요(선택)"
                             />
                         </div>
                     </div>

@@ -16,7 +16,6 @@ export default function ProductModifyandDeleteView({data, setCartDatas}) {
     let process = require('../../../db/myProcess.json');
 
     const handleDelete = (id) => {
-
         fetch(`/catalog-service/catalogs/${id}`,{
             method: "DELETE"
         }).then(
@@ -45,11 +44,11 @@ export default function ProductModifyandDeleteView({data, setCartDatas}) {
         <td className="product-quantity">
             <div className="cart-plus-minus">
                 <button className="dec qtybutton" onClick={()=>handleCountDec()}>-</button>
-                <input className="cart-plus-minus-box" type="text" readonly="" value={count} />
+                <input className="cart-plus-minus-box" type="text" readonly="" value={data.stock} />
                 <button className="inc qtybutton" onClick={()=>handleCountAdd()}>+</button>
             </div>
         </td>
-        <td className="product-subtotal">{data.totalPrice}</td>
+        <td className="product-subtotal">{data.unitPrice * data.stock}</td>
         <td className="product-remove"><button onClick={()=>handleDelete(data.id)}><i className="fa fa-times"></i></button></td>
     </tr>
                 

@@ -28,6 +28,7 @@ export default function HeaderTop(){
                 <div>
                     <Link to="/login"><button type="button" class="btn btn-primary admin-submit">로그인</button></Link>
                     <Link to="/register"><button type="button" class="btn btn-primary admin-submit">회원가입</button></Link>
+                    <Link to="/logout"><button type="button" class="btn btn-primary admin-submit">로그아웃</button></Link>
                 </div>
             </div>
             

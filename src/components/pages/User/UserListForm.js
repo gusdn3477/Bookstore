@@ -4,12 +4,16 @@ import UserListView from './UserListView';
 export default function UserListForm() {
 
     const [userDatas, setUserDatas] = useState([]);
-
+    const myHeaders = new Headers();
+    let token = "Bearer " + localStorage.getItem("token");
+    myHeaders.append("Authorization", token)
     let process = require('../../../db/myProcess.json');
 
     //추후에 orders 테이블로 바꿔야 함
     useEffect(()=>{
-        fetch(`/user-service/users`)
+        fetch(`/user-service/users`,{
+            "headers": myHeaders
+        })
         .then(res => {
             return res.json();
         })
@@ -32,6 +36,7 @@ export default function UserListForm() {
                                         <th>연락처</th>
                                         <th>주소</th>
                                         <th>가입 날짜</th>
+                                        <th>회원 삭제</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -8,7 +8,7 @@ export default function CartTable() {
     let process = require('../../../../db/myProcess.json');
 
     useEffect(()=>{
-        fetch(`/cart`)
+        fetch(`/cart-seivce/carts`)
         .then(res => {
             return res.json();
         })
