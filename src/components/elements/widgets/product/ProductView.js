@@ -9,7 +9,6 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
     const [newData, setnewData] = useState([]);
     // const [categoryLists , setCategoryList] = ({});
 
-
     useEffect(() => {
         fetch(`/catalog-service/catalogs`)
         .then(res => {
@@ -21,12 +20,6 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
         })
         
     },[process.IP, process.PORT]);
-
-    const searchData = categoryName
-    ? newData.filter(
-        item => item.category.filter(single => single === categoryName)[0]
-      )
-    : newData;
 
     const hanlePutWishList = (id) => {
         
@@ -82,7 +75,7 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
     }
 
     //예외 발생 가능할 것 같음. 이후에 처리해보기
-    const productList = searchData.map((item, index) => (
+    const productList = newData.length > 0 ? newData.map((item, index) => (
 
         <div className= {`col-xl-${columnNumber} col-md-6 col-lg-3 col-sm-6 `} key={item.id}>
         <div className="product-wrap mb-25">
@@ -127,12 +120,11 @@ export default function ProductView({categoryName, sliceNumber , columnNumber}){
     </div>
         
 
-    )).slice(0,sliceNumber);
+    )).slice(0,sliceNumber) : "";
 
     return(
         <div className="row mt-5">
             {productList}
-
         </div>
         
     );
