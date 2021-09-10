@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useHistory } from "react-router";
+import { Link } from 'react-router-dom';
+import SearchFormView from './SearchFormView';
 
 export default function SearchForm() {
 
@@ -43,13 +45,16 @@ export default function SearchForm() {
         writer : ''
       })
 
+/*
       const onTextCheck = () => {
-        let userIdError = "";
-        let nameError = "";
-        let startDate = '';
-        let endDate = '';
+        let ISBNError = "";
+        let productNameError = "";
+        let stcokError = "";
+        let unitPriceError = "";
+        let startDateError = "";
+        let endDateError = "";
         
-        if (values.name.length === 0) nameError = "이름을 입력해주세요.";
+        if (values.productName.length === 0) productNameError = "이름을 입력해주세요.";
     
         //console.log(userIdError, emailError, pwdError, confirmPwd, nameError, phoneError, userTypesError, useConfirmError)
         setError({
@@ -59,19 +64,8 @@ export default function SearchForm() {
         if (userIdError || nameError ) return false;
         return true;
       }
-
+*/
     let process = require('../../../db/myProcess.json');
-
-    useEffect(()=>{
-        fetch(`http://${process.IP}:${process.PORT}/users`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            setUsersDatas(data);
-            console.log(data);
-        });
-    },[process.IP, process.PORT]);
 
     const handleChangeForm = (e) => {
         setValues({ 
@@ -85,32 +79,25 @@ export default function SearchForm() {
         //console.log(values);
         e.preventDefault();
 
-        const valid = onTextCheck();
+        //const valid = onTextCheck(); 테스트를 위하여 잠시 주석처리.
+        const valid = true;
 
         if (!valid) console.error("retry");
 
         else {
-        
-            fetch(`/catalog-service/catalogs`,{
+            fetch(`/catalog-service/catalogs/search`,{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    id : usersDatas.length + 1,
-                    userId: values.userId,
-                    pwd: values.password,
-                    name: values.name,
-                    email: values.email,
-                    phone: values.phone
-                }),
+                    productName : values.productName // 일단 이름검색만 되게끔
+                })
             }).
-            then(
-                alert("success"),
-                gogo.push('/')
-                //window.location.href = '/'
-
-            )
+            then(res => {
+                return res.json()
+            })
+            .then(data => setUsersDatas(data));
             }
     }
 
@@ -219,7 +206,50 @@ export default function SearchForm() {
                     </div>
                 </div>
             </div>
+            
+            <div className="cart-main-area pt-90 pb-100">
+            <div className="container">
+                <div className="row">
+                    {usersDatas.length > 0 ? <h3 className="cart-page-title">검색 결과</h3> : ""}
+                    <div className="col-12">
+                        <div className="table-content table-responsive cart-table-content">
+                            <table>
+                                <tbody>
+                                {usersDatas && usersDatas.map((item, idx) => (
+                                    <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Product Id</th>
+                                            <th>Product Name</th>
+                                            <th>STOCK</th>
+                                            <th>Unit Price</th>
+                                            <th>writer</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            <SearchFormView 
+                                            key = {idx}
+                                            data = {item}
+                                            setUsersDatas = {setUsersDatas}
+                                        />
+                                        }
+                                    </tbody>
+                                </table>
+                
+                                ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        </div>
+
+        
     );
 
 }
