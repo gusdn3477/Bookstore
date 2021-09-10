@@ -41,10 +41,7 @@ function App() {
       <Switch>
         <Route exact path="/"><Home /></Route>
         <Route exact path="/admin"><Admin /></Route>
-        <Route exact path="/compare"><Compare/></Route>   
         <Route exact path="/cart"><Cart/></Route>
-        <Route exact path ="/wishlist"><WishList/></Route>
-        <Route exact path="/features"><Features /><Brand/></Route>
         <Route exact path="/productdetail/:id"><ProductDetail/></Route>
         <Route exact path="/productlist"><ProductList/></Route>
         <Route exact path="/myaccount"><MyAccount/></Route>
