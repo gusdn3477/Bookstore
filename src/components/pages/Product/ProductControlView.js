@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import HeaderAdmin from '../../../components/layout/Header_admin';
+import HeaderAdmin from '../../layout/Header_admin';
 import Footer from '../../layout/Footer';
 import { Link } from 'react-router-dom';
 

@@ -10,7 +10,7 @@ export default function ColorAndSize({vData, setColor, setSize}) {
         alert(e.target.value)
     }
 
-    var process = require('../../../../../db/myProcess.json');
+    let process = require('../../../../../db/myProcess.json');
 
     useEffect(()=>{
         fetch(`http://${process.IP}:${process.PORT}/size`)
@@ -22,8 +22,6 @@ export default function ColorAndSize({vData, setColor, setSize}) {
             console.log(data.variation);
         });
     },[process.IP, process.PORT]);
-
-
 
     return(
         <div className="pro-details-size-color">
