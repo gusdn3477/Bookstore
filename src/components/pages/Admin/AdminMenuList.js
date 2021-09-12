@@ -31,12 +31,8 @@ export default function AdminMenuList(){
         </div>));
 
     return(
-        <div id="wrap">
-            <Header/>
-                <Bread breadName ="ADMIN" />
-                <div class="Container">
-                    {adminMenuList}    
-                </div>
+        <div class="Container">
+            {adminMenuList}    
         </div>
     );
 }
