@@ -32,7 +32,7 @@ export default function ProductDetail(){
             <Header/>
             <Bread
                 breadId = {productData.id}
-                breadName = {productData.name}
+                breadName = '상품 상세보기'
                 breadUrl = {`/productdetail/${productData.id}`}
             />
             <ProductTop/>

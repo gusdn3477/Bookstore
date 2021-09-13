@@ -9,7 +9,7 @@ export default function OrderListForm() {
 
     //추후에 orders 테이블로 바꿔야 함
     useEffect(()=>{
-        fetch(`/cart-service/carts`)
+        fetch(`/order-service/orders`)
         .then(res => {
             return res.json();
         })
@@ -20,7 +20,7 @@ export default function OrderListForm() {
     return(
         <div className="cart-main-area pt-90 pb-100">
             <div className="container">
-                <h3 className="cart-page-title">주문내역 입니다.</h3>
+                <h3 className="cart-page-title">전체 주문내역 입니다.</h3>
                 <div className="row">
                     <div className="col-12">
                         <div className="table-content table-responsive cart-table-content">

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ProductModifyandDeleteView from './ProductModifyandDeleteView';
+import { Link } from 'react-router-dom';
 
 export default function OrderListForm() {
 
@@ -55,10 +56,10 @@ export default function OrderListForm() {
                     <div className="col-lg-12">
                         <div className="cart-shiping-update-wrapper">
                             <div className="cart-shiping-update">
-                                <a href="/shop-grid-standard">Continue Shopping</a>
+                                <Link to="/productlist">Continue Shopping</Link>
                             </div>
                             <div className="cart-clear">
-                                <button>Clear Shopping Cart</button>
+                                <Link to="/cart">Clear Shopping Cart</Link>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Header from '../../layout/Header';
-import Footer from '../../layout/Footer';
-import Bread from '../../elements/ui/Bread';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function AdminMenuList(){
@@ -31,12 +28,8 @@ export default function AdminMenuList(){
         </div>));
 
     return(
-        <div id="wrap">
-            <Header/>
-                <Bread breadName ="ADMIN" />
-                <div class="Container">
-                    {adminMenuList}    
-                </div>
-        </div>
+            <Fragment>
+                {adminMenuList}   
+            </Fragment>
     );
 }

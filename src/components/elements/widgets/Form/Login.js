@@ -62,7 +62,6 @@ export default function RegisterForm() {
         e.preventDefault();
 
         const valid = onTextCheck();
-        console.log('토큰 잘 만들어졌나 보기(무시하셔도 됩니다)' + localStorage.getItem('token'));
         if (!valid) console.error("retry");
 
         else {
@@ -79,6 +78,8 @@ export default function RegisterForm() {
             .then((res) => {
                 if(res.headers.get('token')){
                     localStorage.setItem("token", res.headers.get('token'));
+                    localStorage.setItem("userId", res.headers.get('userId'));
+                    localStorage.setItem("email", values.email);
                     gogo.push("/");
                 }
                 else{

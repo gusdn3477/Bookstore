@@ -7,7 +7,7 @@ export default function ProDetRgtTop({name,price,rating,txt}) {
         <Fragment>
             <h2>{name}</h2>
             <div className="product-details-price">
-                <span>{price}$</span>
+                <span>{price}원</span>
             </div>
             <div className="pro-details-rating-wrap">
                 {rating && rating > 0 ? (

@@ -1,5 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 export default function HeaderTop(){
+
+    const gogo = useHistory();
+
+    const handleDelete = () => {
+        localStorage.clear();
+        alert('로그아웃 되었습니다')
+        gogo.push('/login');
+    }
 
     return(
         <div className="header-padding-1 d-none d-lg-block header-top-area">
@@ -25,11 +33,17 @@ export default function HeaderTop(){
                         <p>9월 15일까지 배송비 <span>무료!</span></p>
                     </div>
                 </div>
-                <div>
-                    <Link to="/login"><button type="button" class="btn btn-primary admin-submit">로그인</button></Link>
-                    <Link to="/register"><button type="button" class="btn btn-primary admin-submit">회원가입</button></Link>
-                    <Link to="/logout"><button type="button" class="btn btn-primary admin-submit">로그아웃</button></Link>
-                </div>
+                {
+                        localStorage.getItem('token') ? 
+                        <div>
+                            {localStorage.getItem("email")}
+                            <Link to="/"><button type="button" class="btn btn-primary admin-submit" onClick={() => handleDelete()}>로그아웃</button></Link>
+                        </div> :
+                        <div>
+                            <Link to="/login"><button type="button" class="btn btn-primary admin-submit">로그인</button></Link>
+                            <Link to="/register"><button type="button" class="btn btn-primary admin-submit">회원가입</button></Link>
+                        </div>
+                }
             </div>
             
         </div>
