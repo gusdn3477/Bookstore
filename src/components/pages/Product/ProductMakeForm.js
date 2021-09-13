@@ -8,49 +8,45 @@ export default function RegisterForm() {
     const [usersDatas, setUsersDatas] = useState([]);
 
     const [values, setValues] = useState({
-        ISBN : '',
         productName : '',
+        productId : '',
         unitPrice : '',
-        createdAt : '',
         image : '',
         writer : '',
         stock : '',
     })
 
     const [guideTxts, setGuideTxts] = useState({
-        ISBN : '최대 20자 까지 가능합니다.',
         productName : '최대 20자 까지 가능합니다.',
+        productId : '최대 20자까지 가능합니다',
         stock : '숫자로 입력해 주세요.',
         unitPrice : '숫자로 입력해 주세요.',
-        createdAt : '날짜 형식에 맞춰 주세요.',
         image : '',
         writer : '최대 10자까지 입력 가능합니다.'
     });
 
     const [error, setError] = useState({
-        ISBN : '',
         productName : '',
+        productId : '최대 20자까지 가능합니다',
         stock : '',
         unitPrice : '',
-        createdAt : '',
         image : '',
         writer : ''
       })
 
   
       const onTextCheck = () => {
-        let ISBNError = ""
         let productNameError = "";
+        let productIdError = "";
         let stockError = "";
         let unitPriceError = "";
-        let createdAtError = "";
         let writerError = "";
     
         setError({
-          ISBNError, productNameError, stockError, unitPriceError, createdAtError, writerError
+          productIdError, productNameError, stockError, unitPriceError, writerError
         })
     
-        if (ISBNError || productNameError || stockError || unitPriceError || createdAtError || writerError ) return false;
+        if (productIdError || productNameError || stockError || unitPriceError || writerError ) return false;
         return true;
       }
 
@@ -69,33 +65,24 @@ export default function RegisterForm() {
         if (!valid) console.error("retry");
 
         else {
-            fetch(`/catalogs-service/catalogs`,{
+            fetch(`/catalog-service/catalogs`,{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    ISBN : '',
-                    productName : '',
-                    stock : '',
-                    qty : '',
-                    unitPrice : '',
-                    createdAt : '',
-                    image : '',
-                    writer : '',
+                    productId : values.productId,
+                    productName : values.productName,
+                    stock : values.stock,
+                    unitPrice : values.unitPrice,
+                    image : values.image,
+                    writer : values.writer,
                 }),
             })
             .then(res => res.json())
             .then((res) => {
-                if(res.token){
-                    localStorage.setItem("token", res.token);
-                    gogo.push("/");
-                }
-                else{
-                    alert("입력된 정보를 확인하세요");
-                }
-            }
-            )
+                gogo.push("/");
+            })
             }
     }
 
@@ -140,8 +127,8 @@ export default function RegisterForm() {
                             <label>ISBN</label>
                             <input 
                                 type="text"
-                                name="ISBN"
-                                value={values.ISBN}
+                                name="productId"
+                                value={values.productId}
                                 onChange={handleChangeForm}
                                 placeholder="ISBN을 입력해 주세요."
                             />

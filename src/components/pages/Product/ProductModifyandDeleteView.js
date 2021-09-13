@@ -36,7 +36,7 @@ export default function ProductModifyandDeleteView({data, setCartDatas}) {
             <Link to={`/productdetail/${data.id}`}><img className="img-fluid" src="" alt=""/></Link>
         </td>
         <td className="product-name">
-            <a href="/product/2">{data.productName}</a>
+            <Link to={`/productdetail/${data.productId}`}>{data.productName}</Link>
         </td>
         <td className="product-price-cart">
             <span className="amount">{data.unitPrice}</span>
@@ -49,7 +49,7 @@ export default function ProductModifyandDeleteView({data, setCartDatas}) {
             </div>
         </td>
         <td className="product-subtotal">{data.unitPrice * data.stock}</td>
-        <td className="product-remove"><button onClick={()=>handleDelete(data.id)}><i className="fa fa-times"></i></button></td>
+        <td className="product-remove"><button onClick={()=>handleDelete(data.productId)}><i className="fa fa-times"></i></button></td>
     </tr>
                 
 

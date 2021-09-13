@@ -4,7 +4,7 @@ import Rating from '../../ui/Rating';
 
 export default function ProductView({categoryName, sliceNumber , columnNumber}){
 
-    var process = require('../../../../db/myProcess.json');
+    let process = require('../../../../db/myProcess.json');
 
     const [newData, setnewData] = useState([]);
     // const [categoryLists , setCategoryList] = ({});

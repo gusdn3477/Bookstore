@@ -30,7 +30,11 @@ export default function ProductDetailRight() {
                     name = {datas.productName}
                     price = {datas.unitPrice}
                 />
-                <ProDetRgtMiddle />
+                <ProDetRgtMiddle
+                    productId = {datas.productId}
+                    qty = {datas.qty}
+                    unitPrice = {datas.unitPrice}
+                />
                  <ProDetRgtBottom /> 
 
             </div>

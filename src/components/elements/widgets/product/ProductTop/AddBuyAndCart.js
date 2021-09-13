@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import { Fragment } from 'react';
 import {Link} from 'react-router-dom';
 
-export default function AddBuyAndCart({data, color, size}) {
+export default function AddBuyAndCart({productId, qty, unitPrice}) {
 
     let process = require('../../../../../db/myProcess.json');
 
@@ -15,74 +16,40 @@ export default function AddBuyAndCart({data, color, size}) {
         count > 1 ? setCount(count-1) : alert("최소 수량은 1개 입니다.")
     }
 
-
-    const hanlePutCompareList = () => {
-
-        fetch(`http://${process.IP}:${process.PORT}/compare`,{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                id: data.id,
-                name: data.name,
-                image: data.image,
-                price: data.price,
-                discount: data.discount,
-                shortDescription: data.shortDescription,
-                rating : data.rating,
-            }),
-        }).
-        then(
-            alert("success")
-        )
-
-    }
-
-    const hanlePutWishList = () => {
-
-        fetch(`http://${process.IP}:${process.PORT}/wish`,{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                id: data.id,
-                name: data.name,
-                image: data.image,
-                price: data.price,
-                discount: data.discount
-            }),
-        }).
-        then(
-            alert("success")
-        )
-
-    }
-
-
     const hanlePutCartList = () => {
 
-        fetch(`http://${process.IP}:${process.PORT}/cart`,{
+        fetch(`/cart-service/${localStorage.getItem('userId')}/carts`,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                id: data.id,
-                name: data.name,
-                image: data.image,
-                price: data.price,
-                discount: data.discount,
+                productId: productId,
                 qty : count,
-                color: color,
-                size: size
+                unitPrice : unitPrice
             }),
         }).
         then(
-            alert("success")
+            alert("장바구니에 담기 성공!")
         )
+    }
 
+    const hanlePutOrderList = () => {
+
+        fetch(`/order-service/${localStorage.getItem('userId')}/orders`,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                productId: productId,
+                qty : count,
+                unitPrice : unitPrice
+            }),
+        }).
+        then(
+            alert("주문 성공!")
+        )
     }
 
     
@@ -93,24 +60,25 @@ export default function AddBuyAndCart({data, color, size}) {
                 <input className="cart-plus-minus-box" type="text" readonly="" value={count}/>
                 <button className="inc qtybutton" onClick={()=>handleCountAdd()}>+</button>
             </div>
-            <div className="pro-details-cart btn-hover">
-                <button onClick={()=> hanlePutCartList()}> Add To Cart </button>
-            </div>
             
-            <div className="pro-details-cart btn-hover ml-0"> 
-                <a href="//www.amazon.com" rel="noopener noreferrer" target="_blank">Buy Now</a>
-            </div>
-            
-            <div className="pro-details-wishlist">
-                <button className="" title="Add to wishlist" onClick={()=> hanlePutWishList()}>
-                    <i className="las la-bookmark"></i>
-                </button>
-            </div>
-            <div className="pro-details-compare">
-                <button className="" title="Add to compare" onClick={()=> hanlePutCompareList()}>
-                    <i className="las la-random"></i>
-                </button>
-            </div>
+            {localStorage.getItem("token") ? 
+                <Fragment>
+                    <div className="pro-details-cart btn-hover">
+                        <button onClick={()=> hanlePutCartList()}> Add To Cart </button>
+                    </div>
+                    <div className="pro-details-cart btn-hover">
+                        <button onClick={()=> hanlePutOrderList()}> Buy Now </button>
+                    </div>
+                </Fragment> : 
+                <Fragment>
+                    <div className="pro-details-cart btn-hover">
+                        <Link to="/login">Add To Cart</Link>
+                    </div>
+                    <div className="pro-details-cart btn-hover ml-0">
+                        <Link to="/login">Buy Now</Link>
+                    </div>
+            </Fragment>
+            }
         </div>
     );
 }

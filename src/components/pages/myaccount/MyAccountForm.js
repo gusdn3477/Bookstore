@@ -1,8 +1,20 @@
 import ChangePassword from "./ChangePassword";
 import AddressEdit from "./AddressEdit";
-import SignUp from "./SignUp";
+import { useEffect, useState } from "react";
 
 export default function MyAccountForm() {
+
+    const [ usersDatas, setUsersDatas ] = useState([]);
+    useEffect(()=>{
+        fetch(`/order-service/${localStorage.getItem('userId')}/orders`)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            setUsersDatas(data);
+            console.log(data);
+        });
+    },[]);
 
     return (
         <div className="myaccount-area pb-80 pt-100">
@@ -28,9 +40,18 @@ export default function MyAccountForm() {
                                         </button>
                                     </div>
                                     <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingThree">
-                                        <AddressEdit />
+                                        <div className="card-body">
+                                            {
+                                                usersDatas.map(item => (
+                                                    <AddressEdit 
+                                                        key = {item.id}
+                                                        data = {item}/>
+                                                ))
+                                            }
+                                        </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

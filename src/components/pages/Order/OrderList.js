@@ -9,7 +9,7 @@ export default function OrderList(){
     return(
         <Fragment>
             <Header/>
-            <Bread breadName ="결제내역" />
+            <Bread breadName ="전체 주문내역" />
             <OrderListForm />
             <Footer/>
         </Fragment>

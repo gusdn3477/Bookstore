@@ -38,6 +38,9 @@
       "discount": 10,
       "shortDescription": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
       "rating": 4
+    },
+    {
+      "id": "npxEMjM"
     }
   ],
   "wish": [
@@ -53,6 +56,12 @@
       ],
       "price": 12.45,
       "discount": 10
+    },
+    {
+      "id": "cZ_EUZQ"
+    },
+    {
+      "id": "vPb62n1"
     }
   ],
   "adminmenu": [
@@ -75,7 +84,7 @@
       "url": "/userlist"
     }
   ],
-  "productcontrol" : [
+  "productcontrol": [
     {
       "id": "1",
       "name": "상품 관리",
@@ -163,19 +172,22 @@
       "id": 1,
       "name": "las la-search",
       "url": "/search",
-      "count": 0
+      "count": 0,
+      "auth" : "F"
     },
     {
       "id": 2,
       "name": "las la-user-circle",
       "url": "/myaccount",
-      "count": 0
+      "count": 0,
+      "auth" : "T"
     },
     {
       "id": 3,
       "name": "las la-shopping-bag",
       "url": "/cart",
-      "count": 0
+      "count": 0,
+      "auth" : "T"
     }
   ],
   "category": [

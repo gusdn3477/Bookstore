@@ -1,4 +1,22 @@
+import { useHistory } from "react-router";
+
 export default function ChangePassword(){
+
+    const gogo = useHistory();
+    const deleteUser = () => {
+        fetch(`/user-service/users/${localStorage.getItem('userId')}`,{
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).
+        then(
+            alert("탈퇴 성공!"),
+            localStorage.clear(),
+            gogo.push('/')
+        )
+    }
+
     return(
         <div className="card-body">
         <div className="myaccount-info-wrapper">
@@ -22,7 +40,8 @@ export default function ChangePassword(){
             </div>
             <div className="billing-back-btn">
                 <div className="billing-btn">
-                    <button type="submit">Continue</button>
+                    <button type="submit" style={{marginRight:"10px"}}>Continue</button>
+                    <button type="submit" onClick={deleteUser}>회원탈퇴</button>
                 </div>
             </div>
         </div>

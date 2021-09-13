@@ -18,7 +18,9 @@ export default function SideMenu() {
   
   const menuList = menuData.map((item, index) => (
       <div className="same-style header-compare">
-          <Link to = {item.url}><i className={item.name}></i><span className="count-style">{item.count}</span></Link>
+          {
+              localStorage.getItem('userId') ? <Link to = {item.url}><i className={item.name}></i><span className="count-style">{item.count}</span></Link> : ''
+          }
       </div>
   ))
 
