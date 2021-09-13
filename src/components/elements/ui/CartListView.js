@@ -17,11 +17,11 @@ export default function CartListView({data, setCartDatas}) {
 
     const handleDelete = (id) => {
 
-        fetch(`http://${process.IP}:${process.PORT}/cart/${id}`,{
+        fetch(`/cart-service/cart/${id}`,{
             method: "DELETE"
         }).then(
             alert("삭제 되었습니다!"),
-            fetch(`http://${process.IP}:${process.PORT}/cart`)
+            fetch(`/cart-service/cart/${id}/cart`)
             .then(res => {
                 return res.json();
             })
