@@ -24,9 +24,7 @@ export default function Admin(){
         <div id="wrap">
             <Header/>
                 <Bread breadName ="ADMIN" />
-                <div class="Container">
                     <AdminMenuList data={newAdminMenu}/>
-                </div>
             <Footer/>
         </div>
     );
