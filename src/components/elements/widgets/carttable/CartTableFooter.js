@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 export default function CartTableFooter({cartDatas}) {
+
     return(
         <div className="row">
             <div className="col-lg-4 col-md-6">
@@ -12,7 +15,7 @@ export default function CartTableFooter({cartDatas}) {
                     </div>
                     <h5>Total products <span>{cartDatas.unitPrice}</span></h5>
                     <h4 className="grand-totall-title">Grand Total <span>{cartDatas.totalPrice}</span></h4>
-                    <a href="/checkout">Proceed to Checkout</a>
+                    <Link to="#">구매하기</Link>
                 </div>
             </div>
         </div>
