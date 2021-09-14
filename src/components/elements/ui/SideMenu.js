@@ -29,7 +29,19 @@ export default function SideMenu() {
       <div className="col-xl-2 col-lg-2 col-md-6 col-8">
           
           <div className="header-right-wrap ">
-              {menuList}
+            <div className="same-style header-compare">
+                <Link to = '/search'><i className="las la-search"></i></Link>
+            </div>
+            <div className="same-style header-compare">
+            {
+              localStorage.getItem('userId') ? <Link to = '/myaccount'><i className="las la-user-circle"></i></Link> : ''
+            }
+            </div>
+            <div className="same-style header-compare">
+            {
+              localStorage.getItem('userId') ? <Link to = '/cart'><i className="las la-shopping-bag"></i></Link> : ''
+            }
+            </div>
               <div className="same-style mobile-off-canvas d-block d-lg-none">
                   <button className="mobile-aside-button"><i className="las la-bars"></i></button>
               </div>

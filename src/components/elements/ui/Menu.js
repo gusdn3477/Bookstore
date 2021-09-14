@@ -17,26 +17,9 @@ export default function Menu(){
     },[]);
 
     const menuList = menuData.map(item => {
-        if (item.children) {
-            return(
-                <li key={item.id} className="px-4">
-                    <Link to={item.url}>{item.name}<i className="fa fa-angle-down"></i></Link>
-                    <ul className="mega-menu">
-                        <li>
-                            <ul>
-                                {item.children.map(subitem => (
-                                    <li key={subitem.id}><Link to ={subitem.url}>{subitem.name}</Link></li>
-                                ))}
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            );
-        } else {
-            return(
-                <li key={item.id} className="px-4"><Link to={item.url}>{item.name}</Link></li>
-            );
-        }
+        return(
+            <li key={item.id} className="px-4"><Link to={item.url}>{item.name}</Link></li>
+        );
     });
     
     return(
@@ -44,7 +27,17 @@ export default function Menu(){
             <div className=" main-menu  ">
                 <nav>
                     <ul>
-                        {menuList}
+                        <li><Link to="/">HOME</Link></li>
+                        <li><Link to="/productlist">SHOP</Link></li>
+                        {localStorage.getItem('userId') ? 
+                            <li><Link to="/admin">ADMIN</Link></li>
+                                :
+                            <li><Link to="/login">ADMIN</Link></li>}
+                        {localStorage.getItem('userId') ? 
+                            <li><Link to="/myaccount">MYPAGE</Link></li>
+                                :
+                            <li><Link to="/login">MYPAGE</Link></li>}
+                        <li><Link to="road">찾아오시는 길</Link></li>
                     </ul>
                 </nav>
             </div>

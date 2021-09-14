@@ -29,11 +29,17 @@ export default function ProductDetailRight() {
                 <ProDetRgtTop 
                     name = {datas.productName}
                     price = {datas.unitPrice}
+                    writer = {datas.writer}
                 />
                 <ProDetRgtMiddle
                     productId = {datas.productId}
-                    qty = {datas.qty}
+                    productName = {datas.productName}
                     unitPrice = {datas.unitPrice}
+                    stock = {datas.stock}
+                    image = {datas.image}
+                    qty = {datas.qty}
+                    writer = {datas.writer}
+                    createdAt = {datas.createdAt}
                 />
                  <ProDetRgtBottom /> 
 

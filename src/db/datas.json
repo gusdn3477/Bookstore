@@ -144,27 +144,32 @@
     {
       "id": 1,
       "name": "Home",
-      "url": "/"
+      "url": "/",
+      "auth" : "F"
     },
     {
       "id": 2,
       "name": "SHOP",
-      "url": "/productlist"
+      "url": "/productlist",
+      "auth" : "F"
     },
     {
       "id": 3,
       "name": "ADMIN",
-      "url": "/admin"
+      "url": "/admin",
+      "auth" : "T"
     },
     {
       "id": 4,
       "name": "MYPAGE",
-      "url": "/myaccount"
+      "url": "/myaccount",
+      "auth" : "T"
     },
     {
       "id": 5,
       "name": "찾아오시는 길",
-      "url": "/road"
+      "url": "/road",
+      "auth" : "F"
     }
   ],
   "sidemenu": [

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Fragment } from 'react';
 import {Link} from 'react-router-dom';
 
-export default function AddBuyAndCart({productId, qty, unitPrice}) {
+export default function AddBuyAndCart({productId, productName, qty, unitPrice, stock, image, writer}) {
 
     let process = require('../../../../../db/myProcess.json');
 
@@ -25,8 +25,11 @@ export default function AddBuyAndCart({productId, qty, unitPrice}) {
             },
             body: JSON.stringify({
                 productId: productId,
-                qty : count,
-                unitPrice : unitPrice
+                productName : productName,
+                userId : localStorage.getItem('userId'),
+                unitPrice : unitPrice,
+                imageUrl : image,
+                qty : count
             }),
         }).
         then(

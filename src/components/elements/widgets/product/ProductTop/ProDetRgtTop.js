@@ -1,7 +1,7 @@
 import { Fragment,useState } from "react";
 import Rating from '../../../ui/Rating';
 
-export default function ProDetRgtTop({name,price,rating,txt}) {
+export default function ProDetRgtTop({name,price,writer}) {
 
     return (
         <Fragment>
@@ -9,14 +9,10 @@ export default function ProDetRgtTop({name,price,rating,txt}) {
             <div className="product-details-price">
                 <span>{price}원</span>
             </div>
-            <div className="pro-details-rating-wrap">
-                {rating && rating > 0 ? (
-                    <Rating ratingValue={rating} />
-                ) : ( "" )
-                }
-            </div>
             <div className="pro-details-list">
-                <p>{txt}</p>
+                <span>지은이 : {writer}</span>
+            </div>
+            <div className="pro-details-rating-wrap">
             </div>
         </Fragment>
     );

@@ -8,7 +8,7 @@ export default function CartTable() {
     let process = require('../../../../db/myProcess.json');
 
     useEffect(()=>{
-        fetch(`/cart-seivce/carts`)
+        fetch(`/cart-service/${localStorage.getItem('userId')}/carts`)
         .then(res => {
             return res.json();
         })
@@ -28,11 +28,9 @@ export default function CartTable() {
                                 <thead>
                                     <tr>
                                         <th>Image</th>
-                                        <th>Product Name</th>
-                                        <th>Unit Price</th>
-                                        <th>Qty</th>
-                                        <th>Subtotal</th>
-                                        <th>action</th>
+                                        <th>상품 이름</th>
+                                        <th>가격</th>
+                                        <th>삭제하기</th>
                                     </tr>
                                 </thead>
                                 <tbody>

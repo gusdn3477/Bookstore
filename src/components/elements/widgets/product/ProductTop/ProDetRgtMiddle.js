@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from "react";
 import AddBuyAndCart from './AddBuyAndCart';
 
-export default function ProDetRgtMiddle({productId, qty, unitPrice}) {
+export default function ProDetRgtMiddle({productId, productName, qty, unitPrice, stock, image, writer}) {
 
     // const { id } = useParams();
 
@@ -15,8 +15,12 @@ export default function ProDetRgtMiddle({productId, qty, unitPrice}) {
         <Fragment>
             <AddBuyAndCart
                 productId = {productId}
-                qty = {qty}
+                productName = {productName}
                 unitPrice = {unitPrice}
+                stock = {stock}
+                image = {image}
+                qty = {qty}
+                writer = {writer}
             /> 
         </Fragment>
     

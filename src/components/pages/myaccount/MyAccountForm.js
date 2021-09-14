@@ -41,6 +41,10 @@ export default function MyAccountForm() {
                                     </div>
                                     <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingThree">
                                         <div className="card-body">
+                                        <div className="account-info-wrapper">
+                                            <h4>주문내역</h4>
+                                        </div>
+                                            <div className="myaccount-info-wrapper">
                                             {
                                                 usersDatas.map(item => (
                                                     <AddressEdit 
@@ -48,6 +52,7 @@ export default function MyAccountForm() {
                                                         data = {item}/>
                                                 ))
                                             }
+                                        </div>
                                         </div>
                                     </div>
                                 </div>

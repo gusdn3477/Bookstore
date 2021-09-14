@@ -28,9 +28,9 @@ export default function AdminMenuList(){
         </div>));
 
     return(
-            <Fragment>
-                {adminMenuList}   
-            </Fragment>
+            <div class="Container">
+                {adminMenuList}    
+            </div>
 
     );
 }
