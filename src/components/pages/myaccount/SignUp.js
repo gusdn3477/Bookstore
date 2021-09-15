@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useHistory } from "react-router";
+//이거 사용 X => register 사용합니다. 백업용으로 남겨놓음
 
 export default function SignUp() {
 
@@ -107,7 +108,7 @@ export default function SignUp() {
             [e.target.name]: e.target.value 
         });
     }
-
+    
     const handlePutUserLists = (e) => {
         //alert(usersDatas.length);
         //console.log(values);
@@ -154,7 +155,6 @@ export default function SignUp() {
                     <h5>SignUp</h5>
                 </div>
                 <div className="row">
-                    
                     <div className="col-lg-12 col-md-12">
                         <div className="billing-info">
                             <label>Id</label>

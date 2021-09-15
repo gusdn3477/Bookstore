@@ -1,4 +1,4 @@
-import ChangePassword from "./ChangePassword";
+import CheckPassword from "./CheckPassword";
 import AddressEdit from "./AddressEdit";
 import { useEffect, useState } from "react";
 
@@ -30,7 +30,7 @@ export default function MyAccountForm() {
                                         </button>
                                     </div>
                                     <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingTwo">
-                                        <ChangePassword />
+                                        <CheckPassword />
                                     </div>
                                 </div>
                                 <div className="accordion-item single-my-account mb-20 card">

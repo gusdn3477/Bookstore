@@ -1,7 +1,45 @@
 import React, {useState, useEffect} from 'react';
 import { useHistory } from "react-router";
-
+import DaumPostCode from '../../../../utilities/DaumPostCode';
 export default function RegisterForm() {
+
+
+    const [address, setAddress] = useState(''); // 주소
+    const [addressDetail, setAddressDetail] = useState(''); // 상세주소
+    const [isOpenPost, setIsOpenPost] = useState(false);
+
+    const onChangeOpenPost = () => {
+        setIsOpenPost(!isOpenPost);
+    };
+
+    const onCompletePost = (data) => {
+    let fullAddr = data.address;
+    let extraAddr = '';
+
+    if (data.addressType === 'R') {
+        if (data.bname !== '') {
+            extraAddr += data.bname;
+        }
+        if (data.buildingName !== '') {
+            extraAddr += extraAddr !== '' ? `, ${data.buildingName}` : data.buildingName;
+        }
+        fullAddr += extraAddr !== '' ? ` (${extraAddr})` : '';
+        }
+
+    setAddress(data.zonecode);
+    setAddressDetail(fullAddr);
+    setIsOpenPost(false);
+  };
+
+  const postCodeStyle = {
+    display: 'block',
+    position: 'relative',
+    top: '0%',
+    width: '400px',
+    height: '400px',
+    padding: '7px',
+  };
+
 
     const gogo = useHistory();
 
@@ -14,6 +52,7 @@ export default function RegisterForm() {
         confirmPassword: '',
         phone: '',
         name: '',
+        address : '',
     })
 
     const [guideTxts, setGuideTxts] = useState({
@@ -33,8 +72,6 @@ export default function RegisterForm() {
         nameError: '',
         phoneError: ''
       })
-
-
 
   const isUserId = userId => {
     const userIdRegex = /^[a-z0-9_!@$%^&*-+=?"]{1,20}$/
@@ -131,7 +168,8 @@ export default function RegisterForm() {
                     pwd: values.password,
                     name: values.name,
                     email: values.email,
-                    phone: values.phone
+                    phone: values.phone,
+                    address: values.address
                 }),
             }).
             then(
@@ -163,6 +201,7 @@ export default function RegisterForm() {
             <form  onSubmit={handlePutUserLists}>
                 <div className="account-info-wrapper">
                     <h4>형식에 맞춰 작성해 주시면 됩니다.</h4>
+                {/*<DaumPostcode style={postCodeStyle} autoClose onComplete={onCompletePost} /> 일단 대기중. 모달로 사용 고민중*/}
                 </div>
                 <div className="row">
                     
@@ -280,8 +319,20 @@ export default function RegisterForm() {
                             :
                                 <div style={{ color: "gray", fontSize: "10px", margin: '-5px 0 10px 15px' }}>{guideTxts.phoneGuide}</div>
                     }
-                    
+
+                    <div className="col-lg-12 col-md-12">
+                        <div className="billing-info">
+                            <label>주소</label>
+                            <input 
+                                type="text"
+                                name="address"
+                                value={values.address}
+                                onChange={handleChangeForm}
+                            />
+                        </div>
+                    </div>
                 </div>
+                <DaumPostCode/>
                 
                 <div className="billing-back-btn">
                     <div className="billing-btn">

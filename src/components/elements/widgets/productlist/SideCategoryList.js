@@ -12,7 +12,6 @@ export default function SideCategoryList({item, setCategoryName}){
 
     const [newData, setnewData] = useState([]);
     console.log(newData);
-
     
     useEffect(() => {
         fetch(`http://${process.IP}:${process.PORT}/product`)
@@ -28,10 +27,9 @@ export default function SideCategoryList({item, setCategoryName}){
 
     return(
         <li key ={item.id}>
-        <div className="sidebar-widget-list-left">
-            <button onClick = {() => handleCheck(item.name)}><span className= { chk ? 'mark' : 'checkmark' } ></span>{item.name}</button>
-        </div>
-    </li>
-    
+            <div className="sidebar-widget-list-left">
+                <button onClick = {() => handleCheck(item.name)}><span className= { chk ? 'mark' : 'checkmark' } ></span>{item.name}</button>
+            </div>
+        </li>
     );
 }

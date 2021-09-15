@@ -4,13 +4,12 @@ import Bread from '../../elements/ui/Bread';
 import MyAccountChangeForm from './MyAccountChangeForm'
 import { Fragment } from 'react';
 
-
-export default function ProductMake(){
+export default function MyAccountChange(){
 
     return(
         <Fragment>
             <Header/>
-            <Bread breadName ="상품등록" />
+            <Bread breadName ="회원정보 수정" />
             <MyAccountChangeForm />
             <Footer/>
         </Fragment>
