@@ -24,8 +24,8 @@ export default function UserListView({data, setUserDatas}) {
 
     return(
         <tr>
-        <td className="product-thumbnail">
-            <Link to={`/catalog/${data.name}`}><img className="img-fluid" src="" alt=""/></Link>
+        <td className="product-price-cart">
+            <Link to={`/catalog/${data.name}`}><span className="name">{data.name}</span></Link>
         </td>
         <td className="product-price-cart">
             <span className="orderid">{data.email}</span>
