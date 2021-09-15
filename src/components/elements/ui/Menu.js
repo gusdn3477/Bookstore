@@ -18,10 +18,10 @@ export default function Menu(){
                     <ul>
                         <li><Link to="/">HOME</Link></li>
                         <li><Link to="/productlist">SHOP</Link></li>
-                        {localStorage.getItem('userId') ? 
+                        {localStorage.getItem('userId') && localStorage.getItem('email').slice(0, 5) === "admin" ? 
                             <li><Link to="/admin">ADMIN</Link></li>
                                 :
-                            <li><Link to="/login">ADMIN</Link></li>}
+                            ""}
                         {localStorage.getItem('userId') ? 
                             <li><Link to="/myaccount">MYPAGE</Link></li>
                                 :
