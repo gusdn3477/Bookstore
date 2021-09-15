@@ -14,9 +14,7 @@ import "./assets/css/registerChoice.css";
 import "./assets/icons8/css/line-awesome.min.css";
 import ProductDetail from "./components/pages/ProductDetail/ProductDetail";
 import ToTop from './utilities/ToTop';
-import WishList from "./components/pages/wishlist/Wishlist";
 import Cart from "./components/pages/cart/Cart";
-import Compare from "./components/pages/compare/Compare";
 import ProductList from "./components/pages/productlist/ProductList";
 import MyAccount from "./components/pages/myaccount/MyAccount";
 import ReduxSample from '../src/components/pages/reduxsample/ReduxSample'
@@ -33,6 +31,7 @@ import Search from './components/pages/Search/Search';
 import OrderList from "./components/pages/Order/OrderList";
 import ProductModifiyAndDelete from "./components/pages/Product/ProductModifyandDelete";
 import UserList from './components/pages/User/UserList';
+import Buy from './components/pages/Buy/Buy';
 
 function App() {
   return (
@@ -55,6 +54,7 @@ function App() {
         <Route exact path="/orderlist"><OrderList/></Route>
         <Route exact path="/productmodify"><ProductModifiyAndDelete/></Route>
         <Route exact path="/UserList"><UserList/></Route>
+        <Route exact path="/buy/:id"><Buy/></Route>
       
         <Provider store={store}>
           <Route exact path="/reduxsample"><ReduxSample/></Route>

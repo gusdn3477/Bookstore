@@ -3,7 +3,6 @@ import CategoryData from '../../../db/nav.json';
 
 export default function TabMenu({setCategoryName, categoryName}){
 
-
     const [ categoryData, setCategoryData ] = useState([]);
     let process = require('../../../db/myProcess.json');
 

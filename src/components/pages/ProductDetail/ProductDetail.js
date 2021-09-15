@@ -11,7 +11,6 @@ export default function ProductDetail(){
     const { id } = useParams();
     const [ productData , setProductData ] = useState([]);
 
-    
     let process = require('../../../db/myProcess.json');
   
     useEffect((id)=>{
@@ -35,7 +34,8 @@ export default function ProductDetail(){
                 breadName = '상품 상세보기'
                 breadUrl = {`/productdetail/${productData.id}`}
             />
-            <ProductTop/>
+            <ProductTop
+                id = {id}/>
             {/*<ProductBottom/>*/}
             <Footer/>
         </Fragment>

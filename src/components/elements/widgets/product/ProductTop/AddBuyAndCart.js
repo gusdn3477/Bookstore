@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { Fragment } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 
-export default function AddBuyAndCart({productId, productName, qty, unitPrice, stock, image, writer}) {
+export default function AddBuyAndCart({productId, productName, qty, unitPrice, stock, image, writer, id}) {
 
     let process = require('../../../../../db/myProcess.json');
 
@@ -70,7 +70,8 @@ export default function AddBuyAndCart({productId, productName, qty, unitPrice, s
                         <button onClick={()=> hanlePutCartList()}> Add To Cart </button>
                     </div>
                     <div className="pro-details-cart btn-hover">
-                        <button onClick={()=> hanlePutOrderList()}> Buy Now </button>
+                        <Link to={`/buy/${id}`}>Buy Now</Link>
+                        {/*<button onClick={()=> hanlePutOrderList()}> Buy Now </button>*/}
                     </div>
                 </Fragment> : 
                 <Fragment>
@@ -80,7 +81,7 @@ export default function AddBuyAndCart({productId, productName, qty, unitPrice, s
                     <div className="pro-details-cart btn-hover ml-0">
                         <Link to="/login">Buy Now</Link>
                     </div>
-            </Fragment>
+                </Fragment>
             }
         </div>
     );

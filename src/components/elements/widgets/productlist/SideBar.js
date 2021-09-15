@@ -6,6 +6,9 @@ export default function SideBar({setCategoryName}){
 
     const process = require('../../../../db/myProcess.json');
     const gogo = useHistory();
+    const category = [
+
+    ];
     const [categoryList, setCategoryList] = useState([]);
     const [usersDatas, setUsersDatas] = useState([]);
     const [values, setValues] = useState({

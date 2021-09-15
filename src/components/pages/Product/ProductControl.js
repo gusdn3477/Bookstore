@@ -1,28 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import HeaderAdmin from '../../../components/layout/Header_admin';
 import Footer from '../../layout/Footer';
 import { Link } from 'react-router-dom';
+import Header from '../../layout/Header';
+import Bread from '../../elements/ui/Bread';
 
 export default function Home(){
 
-    const [ productControlData , setProductControlData ] = useState([]);
-    
-    let process = require('../../../db/myProcess.json');
-  
-    useEffect(()=>{
-        fetch(`http://localhost:3005/productcontrol`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            setProductControlData(data);
-            console.log(data);
-        });
-    },[process.IP, process.PORT]);
-    
     return(
         <div id="wrap">
-            <HeaderAdmin/>
+            <Header/>
+            <Bread name="관리자 모드"/>
                 <div class="Container">
                     <div className="login-form">
                         <div className="mb-3">

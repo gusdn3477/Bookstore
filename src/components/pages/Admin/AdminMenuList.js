@@ -3,19 +3,27 @@ import { Link } from 'react-router-dom';
 
 export default function AdminMenuList(){
 
-    const [ newAdminMenu , setNewAdminMenu] = useState([]);
-    let proceess = require('../../../db/myProcess.json');
-
-    useEffect(() => {
-        fetch(`http://localhost:3005/adminmenu`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data =>{
-            setNewAdminMenu(data);
-        })
-    },[]);
-
+    const newAdminMenu = [
+        {
+          "id": "1",
+          "name": "상품 관리",
+          "description": "상품을 관리(등록, 수정, 삭제)할 수 있습니다.",
+          "url": "/productcontrol"
+        },
+        {
+          "id": "2",
+          "name": "거래내역 확인",
+          "description": "현재까지 이뤄진 거래내역을 확인할 수 있습니다.",
+          "url": "/orderlist"
+        },
+        {
+          "id": "3",
+          "name": "사용자 관리",
+          "description": "사용자를 관리할 수 있습니다",
+          "url": "/userlist"
+        }
+      ];
+      
     const adminMenuList = newAdminMenu.map((item, idx) => (
         <div className="login-form" key={idx}>
             <div className="mb-3">

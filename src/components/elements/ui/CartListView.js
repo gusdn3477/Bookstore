@@ -13,8 +13,6 @@ export default function CartListView({data, setCartDatas}) {
         count > 1 ? setCount(count-1) : alert("최소 수량은 1개 입니다.")
     }
 
-    let process = require('../../../db/myProcess.json');
-
     const handleDelete = (id) => {
 
         fetch(`/cart-service/${localStorage.getItem('userId')}/carts`,{
@@ -29,7 +27,21 @@ export default function CartListView({data, setCartDatas}) {
                 setCartDatas(data);
             })
         )
-       
+    }
+
+    const buy = (id) => {
+        fetch(`/order-service/${localStorage.getItem('userId')}/orders`,{
+            method: "DELETE"
+        }).then(
+            alert("삭제 되었습니다!"),
+            fetch(`/cart-service/${localStorage.getItem('userId')}/carts`)
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                setCartDatas(data);
+            })
+        )
     }
 
     return(
@@ -49,6 +61,10 @@ export default function CartListView({data, setCartDatas}) {
             </td>
             <td className="product-subtotal">{data.createdAt}</td>
             */}
+            <td className="product-remove">
+                <Link to={`/buy/${data.productId}`}>구매하기!
+                </Link>
+            </td>
             <td className="product-remove"><button onClick={()=>handleDelete(data.id)}><i className="fa fa-times"></i></button></td>
         </tr>
 

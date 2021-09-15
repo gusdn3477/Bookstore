@@ -52,18 +52,6 @@ export default function OrderListForm() {
                         </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-lg-12">
-                        <div className="cart-shiping-update-wrapper">
-                            <div className="cart-shiping-update">
-                                <Link to="/productlist">Continue Shopping</Link>
-                            </div>
-                            <div className="cart-clear">
-                                <Link to="/cart">Clear Shopping Cart</Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     );

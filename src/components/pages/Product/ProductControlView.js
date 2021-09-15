@@ -5,21 +5,6 @@ import { Link } from 'react-router-dom';
 
 export default function Home(){
 
-    const [ productControlData , setProductControlData ] = useState([]);
-    
-    let process = require('../../../db/myProcess.json');
-  
-    useEffect(()=>{
-        fetch(`http://localhost:3005/productcontrol`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            setProductControlData(data);
-            console.log(data);
-        });
-    },[process.IP, process.PORT]);
-    
     return(
         <div id="wrap">
             <HeaderAdmin/>

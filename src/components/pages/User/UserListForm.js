@@ -20,7 +20,7 @@ export default function UserListForm() {
         .then(data => {
             setUserDatas(data);
         });
-    },[process.IP, process.PORT]);
+    },[]);
     return(
         <div className="cart-main-area pt-90 pb-100">
             <div className="container">

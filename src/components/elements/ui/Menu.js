@@ -5,17 +5,6 @@ export default function Menu(){
 
     const [ menuData, setMenuData ] = useState([]);
 
-    useEffect(() => {
-        fetch(`http://localhost:3005/menu`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            setMenuData(data);
-        })
-        //.catch(error => console.log(error))
-    },[]);
-
     const menuList = menuData.map(item => {
         return(
             <li key={item.id} className="px-4"><Link to={item.url}>{item.name}</Link></li>

@@ -30,6 +30,7 @@ export default function CartTable() {
                                         <th>Image</th>
                                         <th>상품 이름</th>
                                         <th>가격</th>
+                                        <th>구매하기</th>
                                         <th>삭제하기</th>
                                     </tr>
                                 </thead>
@@ -48,7 +49,6 @@ export default function CartTable() {
                         </div>
                     </div>
                 </div>
-                <CartTableFooter cartDatas = {cartDatas}/>
             </div>
         </div>
     );

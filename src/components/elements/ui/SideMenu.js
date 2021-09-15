@@ -3,18 +3,29 @@ import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 export default function SideMenu() {
   
-  const [menuData, setMenuData] = useState([]);
-
-  useEffect(()=>{
-      fetch(`http://localhost:3005/sidemenu`)
-      .then(res => {
-          return res.json();
-      })
-      .then(data => {
-          setMenuData(data);
-          console.log(data);
-      });
-  },[]);
+  const menuData = [
+    {
+      "id": 1,
+      "name": "las la-search",
+      "url": "/search",
+      "count": 0,
+      "auth" : "F"
+    },
+    {
+      "id": 2,
+      "name": "las la-user-circle",
+      "url": "/myaccount",
+      "count": 0,
+      "auth" : "T"
+    },
+    {
+      "id": 3,
+      "name": "las la-shopping-bag",
+      "url": "/cart",
+      "count": 0,
+      "auth" : "T"
+    }
+  ];
   
   const menuList = menuData.map((item, index) => (
       <div className="same-style header-compare">

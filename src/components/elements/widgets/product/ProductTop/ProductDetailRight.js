@@ -4,9 +4,7 @@ import ProDetRgtTop from './ProDetRgtTop';
 import ProDetRgtMiddle from './ProDetRgtMiddle';
 import ProDetRgtBottom from './ProDetRgtBottom';
 
-export default function ProductDetailRight() {
-
-    const { id } = useParams();
+export default function ProductDetailRight({id}) {
 
     const [ datas, setDatas ] = useState([]);
     var process = require('../../../../../db/myProcess.json');
@@ -20,7 +18,7 @@ export default function ProductDetailRight() {
             setDatas(data);
             console.log(data);
         });
-    },[process.IP, process.PORT, id]);
+    },[process.IP, process.PORT]);
     
     return (
         <div className="col-lg-6 col-md-6">
@@ -40,6 +38,7 @@ export default function ProductDetailRight() {
                     qty = {datas.qty}
                     writer = {datas.writer}
                     createdAt = {datas.createdAt}
+                    id = {id}
                 />
                  <ProDetRgtBottom /> 
 

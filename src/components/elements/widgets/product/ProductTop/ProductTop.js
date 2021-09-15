@@ -1,7 +1,7 @@
 import ProductDetailLeft from './ProductDetailLeft';
 import ProductDetailRight from './ProductDetailRight';
 
-export default function ProductTop() {
+export default function ProductTop({id}) {
 
     return (
         
@@ -9,7 +9,8 @@ export default function ProductTop() {
             <div className="container">
                 <div className="row">
                     <ProductDetailLeft />
-                    <ProductDetailRight /> 
+                    <ProductDetailRight
+                        id = {id} /> 
                 </div>
             </div>
         </div>

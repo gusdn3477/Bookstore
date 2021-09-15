@@ -18,10 +18,10 @@ export default function ProductList(){
            <div className="shop-area pt-95 pb-100">
                 <div className="container">
                     <div className="row">
-
+                        {/*}
                      <SideBar 
                         setCategoryName = {setCategoryName}
-                     />
+    />                  */}
                       <Shop
                       categoryName = {categoryName}
                       />
