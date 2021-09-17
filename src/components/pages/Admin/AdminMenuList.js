@@ -31,12 +31,12 @@ export default function AdminMenuList(){
                 <div>{item.description}</div>
             </div>
             <Link to={item.url}>
-                <button type="button" class="btn btn-color-orange admin-submit">{item.name}</button>
+                <button type="button" className="btn btn-color-orange admin-submit">{item.name}</button>
             </Link>
         </div>));
 
     return(
-            <div class="Container">
+            <div className="Container">
                 {adminMenuList}    
             </div>
 

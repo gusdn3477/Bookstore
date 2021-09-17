@@ -13,10 +13,10 @@ export default function Footer() {
 
   return (
     <footer>
-      <div class="container-fluid" style={{ padding: 0 }}>
-        <div class="footer">
-          <div class="container">
-            <div class="row">
+      <div className="container-fluid" style={{ padding: 0 }}>
+        <div className="footer">
+          <div className="container">
+            <div className="row">
               <FooterTitle />
 
               <FooterList

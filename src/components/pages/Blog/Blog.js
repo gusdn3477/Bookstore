@@ -5,9 +5,9 @@ export default function Blog(){
 
     return(
               <section id="blog">
-                    <div class="container">
-                    <BlogTitle title ="Today's Blog"/>
-                    <div class="row mt-5">
+                    <div className="container">
+                      <BlogTitle title ="Today's Blog"/>
+                    <div className="row mt-5">
                       <BlogItem/>
                     </div>
                   </div>

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useHistory } from "react-router";
 import DaumPostCode from '../../../../utilities/DaumPostCode';
+import Test from '../../../../utilities/Test';
 export default function RegisterForm() {
 
 
@@ -25,11 +26,11 @@ export default function RegisterForm() {
         }
         fullAddr += extraAddr !== '' ? ` (${extraAddr})` : '';
         }
-
-    setAddress(data.zonecode);
-    setAddressDetail(fullAddr);
-    setIsOpenPost(false);
-  };
+        alert(data.zonecode);
+        setAddress(data.zonecode);
+        setAddressDetail(fullAddr);
+        setIsOpenPost(false);
+    };
 
   const postCodeStyle = {
     display: 'block',
@@ -126,19 +127,6 @@ export default function RegisterForm() {
         return true;
       }
 
-    let process = require('../../../../db/myProcess.json');
-
-    useEffect(()=>{
-        fetch(`http://${process.IP}:${process.PORT}/users`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            setUsersDatas(data);
-            console.log(data);
-        });
-    },[process.IP, process.PORT]);
-
     const handleChangeForm = (e) => {
         setValues({ 
             ...values, 
@@ -201,7 +189,6 @@ export default function RegisterForm() {
             <form  onSubmit={handlePutUserLists}>
                 <div className="account-info-wrapper">
                     <h4>형식에 맞춰 작성해 주시면 됩니다.</h4>
-                {/*<DaumPostcode style={postCodeStyle} autoClose onComplete={onCompletePost} /> 일단 대기중. 모달로 사용 고민중*/}
                 </div>
                 <div className="row">
                     
@@ -225,8 +212,25 @@ export default function RegisterForm() {
                                 <div style={{ color: "gray", fontSize: "10px", margin: '-5px 0 10px 15px' }}>{guideTxts.userGuide}</div>
                     }
 
-                    
-                    
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        우편번호 찾기
+                    </button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" style={{width:"700px"}}>
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">주소찾기</h5>
+                        </div>
+                        <div class="modal-body" style={{height:"700px", marginTop:"-70px"}}>
+                            <Test/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                     <div className="col-lg-12 col-md-12">
                         <div className="billing-info">
                             <label>Password</label>
@@ -332,7 +336,6 @@ export default function RegisterForm() {
                         </div>
                     </div>
                 </div>
-                <DaumPostCode/>
                 
                 <div className="billing-back-btn">
                     <div className="billing-btn">

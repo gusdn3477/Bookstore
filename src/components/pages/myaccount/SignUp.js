@@ -139,8 +139,6 @@ export default function SignUp() {
             then(
                 alert("success"),
                 gogo.push('/')
-                //window.location.href = '/'
-
             )
             }
     }

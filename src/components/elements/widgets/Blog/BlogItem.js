@@ -42,7 +42,7 @@ export default function BlogItem(){
 
     const blogList = blog.map(item => (
     
-    <div class="col-12 col-md-4 mb-4">
+    <div className="col-12 col-md-4 mb-4">
         
         <Link to = {`/productlist` } >
         <div className="blogImg" style ={{backgroundImage : `url(${item.image})`, backgroundSize:"cover"}}></div>     

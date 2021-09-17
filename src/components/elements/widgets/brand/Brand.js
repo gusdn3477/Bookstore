@@ -1,7 +1,6 @@
 import React, { useEffect, useState} from 'react';
 //import BrandData from '../../../../db/nav.json';
 
-
 export default function Brand(){
 
     /* 현재 단계에서 사용 X */

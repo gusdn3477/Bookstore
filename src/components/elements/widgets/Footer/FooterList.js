@@ -6,8 +6,8 @@ export default function FooterList({ footerMenuList, footerMenuTitle }) {
   const menuList = newList.map((item) => <li key={item.id}>{item.name}</li>);
 
   return (
-    <div class="col-12 col-md-2">
-      <p class="menuTitle">{footerMenuTitle}</p>
+    <div className="col-12 col-md-2">
+      <p className="menuTitle">{footerMenuTitle}</p>
       <ul>{menuList}</ul>
     </div>
   );
