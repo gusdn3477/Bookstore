@@ -1,44 +1,39 @@
-import React, { Component, useRef } from 'react';
+import React, { Component, useRef, useState } from 'react';
 import DaumPostCode from 'react-daum-postcode';
 //import './AddressModal.scss'
-class AddressModal extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: "",
-            phone: "",
-            address: "",
-            zoneCode : "",
-            fullAddress : "",
-            isDaumPost : false,
-            isRegister : false,
-            register: [],
-        }
+
+export default function Test3({setVal}) {
+
+    const [values, setValues] = useState({
+        name: "",
+        phone: "",
+        address: "",
+        zoneCode : "",
+        fullAddress : "",
+        isDaumPost : false,
+        isRegister : false,
+        register: []
+    })
+
+    const handleOpenPost = () => {
+        setValues({isDaumPost:true})
+        // setValues({ 
+        //     ...values, 
+        //     [e.target.isDaumPost]: true
+        // });
+        // setDaumPost(true);
     }
 
-    handleOpenPost = () => {
-        this.setState({
-            isDaumPost : true
-        })
+    const handleOffPost = () => {
+        setValues({isDaumPost:false})
+        // setValues({ 
+        //     ...values, 
+        //     [e.target.isDaumPost]: false
+        // });
     }
-
-    onClose = (state) => {
-        if(state === 'FORCE_CLOSE'){
-            alert('정상 종료');
-        }
-        else{
-            alert('정상 종료 아님');
-        }
-    }
-
-    handleOffPost = () => {
-      this.setState({
-          isDaumPost : false
-      })
-  }
 
     // postcode
-    handleAddress = (data) => {
+    const handleAddress = (data) => {
         let AllAddress = data.address;
         let extraAddress = ''; 
         let zoneCodes = data.zonecode;
@@ -52,15 +47,10 @@ class AddressModal extends Component {
           }
           AllAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
         }
-        this.setState ({
-            fullAddress: AllAddress,
-            zoneCode : zoneCodes
-        })
-      }
+        setValues({fullAddress:AllAddress, zoneCode:zoneCodes});
+    }
 
-    render() {
-        const { isModalShow, isModalClose } = this.props;
-        const { name, phone, address, isDaumPost, fullAddress, zoneCode, isRegister } = this.state;
+    const { name, phone, address, isDaumPost, fullAddress, zoneCode, isRegister } = useState();
         // DaumPostCode style
         const width = 595;
         const height = 450;
@@ -80,6 +70,7 @@ class AddressModal extends Component {
             border: "1px solid #000000",
             overflow: "hidden"
         }
+
         return (
               <div className="modalRow">
                   <div className="modalCell cellTit">
@@ -89,16 +80,16 @@ class AddressModal extends Component {
                   </div>
                   <div className="modalCell">
                       <div className="cellFirst">
-                          <button type="button" class="btn btn-primary" onClick={this.handleOpenPost}>
+                          <button type="button" class="btn btn-primary" onClick={handleOpenPost}>
                               <span>우편번호 찾기</span>
                           </button>
                           <div className="zipCode">{zoneCode}</div>
                       </div>
                       {
-                        isDaumPost ? 
+                        values.isDaumPost ? 
                         <div>
                               <DaumPostCode
-                                  onComplete={this.handleAddress}
+                                  onComplete={handleAddress}
                                 //   onClose={this.onClose}
                                 //   autoClose
                                   width={width}
@@ -107,7 +98,7 @@ class AddressModal extends Component {
                                   isDaumPost={isDaumPost}
                           		/>
                               
-                          <button type="button" style={closeBtnStyle} class="btn btn-primary" onClick={this.handleOffPost}>
+                          <button type="button" style={closeBtnStyle} class="btn btn-primary" onClick={handleOffPost}>
                               <span>닫기</span>
                           </button>
                           </div>
@@ -115,12 +106,9 @@ class AddressModal extends Component {
                       }
                       <div className="address" value={fullAddress} name="fullAdress">{fullAddress}</div>
                       <div className="addressBox">
-                          <input type="text" name="address" onChange={this.handleInput}/>
+                          <input type="text" name="address"/>
                       </div>
                   </div>
               </div>
         );
     }
-}
-
-export default AddressModal;
