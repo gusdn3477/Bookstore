@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import DaumPostCode from 'react-daum-postcode';
-
+//import './AddressModal.scss'
 class AddressModal extends Component {
     constructor(props) {
         super(props);
@@ -21,6 +21,12 @@ class AddressModal extends Component {
             isDaumPost : true
         })
     }
+
+    handleOffPost = () => {
+      this.setState({
+          isDaumPost : false
+      })
+  }
 
     // postcode
     handleAddress = (data) => {
@@ -49,10 +55,18 @@ class AddressModal extends Component {
         // DaumPostCode style
         const width = 595;
         const height = 450;
+        const closeBtnStyle = {
+          position: "absolute",
+            top: 330,
+            left: "687px",
+            zIndex: "100",
+            border: "1px solid #000000",
+            overflow: "hidden"
+        }
         const modalStyle = {
             position: "absolute",
-            top: 0,
-            left: "-178px",
+            top: 370,
+            left: "150px",
             zIndex: "100",
             border: "1px solid #000000",
             overflow: "hidden"
@@ -66,21 +80,27 @@ class AddressModal extends Component {
                   </div>
                   <div className="modalCell">
                       <div className="cellFirst">
-                          <div className="zipCode">{zoneCode}</div>
-                          <button type="button" onClick={this.handleOpenPost} >
+                          <button type="button" class="btn btn-primary" onClick={this.handleOpenPost}>
                               <span>우편번호 찾기</span>
                           </button>
+                          <div className="zipCode">{zoneCode}</div>
                       </div>
                       {
-                          isDaumPost ?
+                        isDaumPost ? 
+                        <div>
                               <DaumPostCode
                                   onComplete={this.handleAddress}
-                                  autoClose
+                                  //{/*autoClose 이거 하면 새로 안 열림*/}
                                   width={width}
                                   height={height}
                                   style={modalStyle}
                                   isDaumPost={isDaumPost}
                           		/>
+                              
+                          <button type="button" style={closeBtnStyle} class="btn btn-primary" onClick={this.handleOffPost}>
+                              <span>닫기</span>
+                          </button>
+                          </div>
                           : null
                       }
                       <div className="address">{fullAddress}</div>
