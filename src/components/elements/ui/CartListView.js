@@ -15,7 +15,7 @@ export default function CartListView({data, setCartDatas}) {
 
     const handleDelete = (id) => {
 
-        fetch(`/cart-service/${localStorage.getItem('userId')}/carts/${data.productId}`,{
+        fetch(`/cart-service/carts/${data.id}`,{
             method: "DELETE"
         }).then(
             alert("삭제 되었습니다!"),
