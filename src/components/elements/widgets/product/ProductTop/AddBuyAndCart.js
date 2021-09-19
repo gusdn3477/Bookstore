@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import { Fragment } from 'react';
 import {Link, useParams} from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 export default function AddBuyAndCart({productId, productName, qty, unitPrice, stock, image, writer, id}) {
 
     let process = require('../../../../../db/myProcess.json');
 
     const [count, setCount] = useState(1);
-
+    const gogo = useHistory();
     const handleCountAdd = () => {
         setCount(count+1);
     }
@@ -16,6 +17,11 @@ export default function AddBuyAndCart({productId, productName, qty, unitPrice, s
         count > 1 ? setCount(count-1) : alert("최소 수량은 1개 입니다.")
     }
 
+    const linktoBuy = (id) => {
+        localStorage.setItem('qty', count);
+        console.log(count);
+        gogo.push(`/buy/${id}`);
+    }
     const hanlePutCartList = () => {
 
         fetch(`/cart-service/${localStorage.getItem('userId')}/carts`,{
@@ -70,7 +76,8 @@ export default function AddBuyAndCart({productId, productName, qty, unitPrice, s
                         <button onClick={()=> hanlePutCartList()}> Add To Cart </button>
                     </div>
                     <div className="pro-details-cart btn-hover">
-                        <Link to={`/buy/${id}`}>Buy Now</Link>
+                        {/* <Link to={`/buy/${id}`}>Buy Now</Link> */}
+                        <button onClick={()=>linktoBuy(id)}>Buy Now</button>
                         {/*<button onClick={()=> hanlePutOrderList()}> Buy Now </button>*/}
                     </div>
                 </Fragment> : 
