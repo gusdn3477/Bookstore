@@ -14,8 +14,9 @@ export default function CartTable() {
         })
         .then(data => {
             setCartDatas(data);
+            console.log(data);
         });
-    },[process.IP, process.PORT]);
+    },[]);
 
     return(
         <div className="cart-main-area pt-90 pb-100">
@@ -30,6 +31,9 @@ export default function CartTable() {
                                         <th>Image</th>
                                         <th>상품 이름</th>
                                         <th>가격</th>
+                                        <th>갯수</th>
+                                        <th>총 가격</th>
+                                        <th>담은 날짜</th>
                                         <th>구매하기</th>
                                         <th>삭제하기</th>
                                     </tr>

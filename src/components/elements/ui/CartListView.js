@@ -15,7 +15,7 @@ export default function CartListView({data, setCartDatas}) {
 
     const handleDelete = (id) => {
 
-        fetch(`/cart-service/${localStorage.getItem('userId')}/carts`,{
+        fetch(`/cart-service/${localStorage.getItem('userId')}/carts/${data.productId}`,{
             method: "DELETE"
         }).then(
             alert("삭제 되었습니다!"),
@@ -55,12 +55,14 @@ export default function CartListView({data, setCartDatas}) {
             <td className="product-price-cart">
                 <span className="amount">{data.unitPrice}</span>
             </td>
-            {/*}
             <td className="product-price-cart">
-                <span className="amount">{data.stock}</span>
+                <span className="amount">{data.qty}</span>
             </td>
-            <td className="product-subtotal">{data.createdAt}</td>
-            */}
+            <td className="product-price-cart">
+                <span className="amount">{data.qty * data.unitPrice}</span>
+            </td>
+            <td className="product-subtotal">{(data.createdAt).substring(0,10)}</td>
+           
             <td className="product-remove">
                 <Link to={`/buy/${data.productId}`}>구매하기!
                 </Link>

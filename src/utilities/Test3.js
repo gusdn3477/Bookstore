@@ -1,4 +1,4 @@
-import React, { Component, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import DaumPostCode from 'react-daum-postcode';
 //import './AddressModal.scss'
 
@@ -106,7 +106,7 @@ export default function Test3({setVal}) {
                       }
                       <div className="address" value={fullAddress} name="fullAdress">{fullAddress}</div>
                       <div className="addressBox">
-                          <input type="text" name="address"/>
+                          <input type="text" name="address" />
                       </div>
                   </div>
               </div>

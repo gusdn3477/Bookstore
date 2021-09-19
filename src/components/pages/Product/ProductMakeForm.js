@@ -1,3 +1,4 @@
+import { useForkRef } from '@material-ui/core';
 import React, {useState, useEffect} from 'react';
 import { useHistory } from "react-router";
 
@@ -84,6 +85,22 @@ export default function RegisterForm() {
                 gogo.push("/");
             })
             }
+    }
+
+    const isSelectedImg = (e) => {
+        if(e.target.files != null){
+            const fd = new FormData();
+            fd.append('filename', e.target.files[0]);
+            fetch('/catalog-service/carts/image', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fd
+                }).then(res=>{})
+            })   
+        }
     }
 
     return(
@@ -176,7 +193,8 @@ export default function RegisterForm() {
                         <div className="billing-info">
                             <label>이미지</label> {/* 타입 변경 요먕 */}
                             <input 
-                                type="text"
+                                type="file"
+                                accept="image/jpeg, image/jpg"
                                 name="image"
                                 value={values.image}
                                 onChange={handleChangeForm}

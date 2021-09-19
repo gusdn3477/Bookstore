@@ -4,6 +4,11 @@ import { useHistory, useParams } from "react-router";
 export default function BuyForm({id}) {
 
     const gogo = useHistory();
+    const [myValues, setMyValues] = useState({
+        name: '',
+        phone: '',
+        address: '',
+    })
 
     const [values, setValues] = useState({
         productId: '',
@@ -39,6 +44,16 @@ export default function BuyForm({id}) {
         })
         .then(data => {
             setValues(data);
+        });
+    },[]);
+
+    useEffect(()=>{
+        fetch(`/user-service/users/${localStorage.getItem('userId')}`)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            setMyValues(data);
         });
     },[]);
 
@@ -111,7 +126,50 @@ export default function BuyForm({id}) {
                                                             readOnly
                                                         />
                                                     </div>
+                                                </div>
+                                                <div className="col-lg-12 col-md-12">
+                                                    <div className="billing-info">
+                                                        <label>총 가격</label>
+                                                        <input 
+                                                            type="text"
+                                                            name="stock"
+                                                            value={values.stock * values.unitPrice}
+                                                            readOnly
+                                                        />
                                                     </div>
+                                                </div>
+                                                <div className="col-lg-12 col-md-12">
+                                                    <div className="billing-info">
+                                                        <label>이름</label>
+                                                        <input 
+                                                            type="text"
+                                                            name="name"
+                                                            value={myValues.name}
+                                                            readOnly
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-12 col-md-12">
+                                                    <div className="billing-info">
+                                                        <label>연락처</label>
+                                                        <input 
+                                                            type="text"
+                                                            name="phone"
+                                                            value={myValues.phone}
+                                                            readOnly
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-12 col-md-12">
+                                                    <div className="billing-info">
+                                                        <label>주소</label>
+                                                        <input 
+                                                            type="text"
+                                                            name="address"
+                                                            value={myValues.address}
+                                                        />
+                                                    </div>
+                                                </div>
                                             </div>
                                             
                                             <div className="billing-back-btn">
