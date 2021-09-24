@@ -1,13 +1,13 @@
+import Postcode from '@actbase/react-daum-postcode';
 import React, {useState, useEffect} from 'react';
 import { useHistory } from "react-router";
-import { Link } from 'react-router-dom';
 import SearchFormView from './SearchFormView';
 
 export default function SearchForm() {
 
     const gogo = useHistory();
 
-    const [usersDatas, setUsersDatas] = useState([]);
+    const [usersDatas, setUsersDatas] = useState([]); //책 데이터입니다.
 
     const [values, setValues] = useState({
         ISBN : '',
@@ -65,8 +65,6 @@ export default function SearchForm() {
         return true;
       }
 */
-    let process = require('../../../db/myProcess.json');
-
     const handleChangeForm = (e) => {
         setValues({ 
             ...values, 
@@ -74,25 +72,44 @@ export default function SearchForm() {
         });
     }
 
-    const handlePutUserLists = (e) => {
+    const searchByProductName = (e) => {
         //alert(usersDatas.length);
         //console.log(values);
         e.preventDefault();
 
         //const valid = onTextCheck(); 테스트를 위하여 잠시 주석처리.
-        const valid = true;
-
-        if (!valid) console.error("retry");
-
+        if(values.productName.length <= 1){
+            console.error("retry");
+            alert("두 글자 이상 입력해 주세요");
+        }
         else {
-            fetch(`/catalog-service/catalogs/search`,{
-                method: "POST",
+            fetch(`/catalog-service/catalogs/search/productname/${values.productName}`,{
                 headers: {
                     "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    productName : values.productName // 일단 이름검색만 되게끔
-                })
+                }
+            }).
+            then(res => {
+                return res.json()
+            })
+            .then(data => setUsersDatas(data));
+            }
+    }
+
+    const searchByWriter = (e) => {
+        //alert(usersDatas.length);
+        //console.log(values);
+        e.preventDefault();
+
+        //const valid = onTextCheck(); 테스트를 위하여 잠시 주석처리.
+        if(values.writer.length <= 1){
+            console.error("retry");
+            alert("두 글자 이상 입력해 주세요");
+        }
+        else {
+            fetch(`/catalog-service/catalogs/search/writer/${values.writer}`,{
+                headers: {
+                    "Content-Type": "application/json",
+                }
             }).
             then(res => {
                 return res.json()
@@ -117,10 +134,7 @@ export default function SearchForm() {
                                     <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                                     <div className="card-body">
             <div className="myaccount-info-wrapper">
-            <form  onSubmit={handlePutUserLists}>
-                <div className="account-info-wrapper">
-                    <h4>형식에 맞춰 작성해 주시면 됩니다. (각 폼은 선택사항입니다.)</h4>
-                </div>
+            <form  onSubmit={searchByProductName}>
                 <div className="row">
                     
                     <div className="col-lg-12 col-md-12">
@@ -143,6 +157,7 @@ export default function SearchForm() {
                                 <div style={{ color: "gray", fontSize: "10px", margin: '-5px 0 10px 15px' }}>{guideTxts.userGuide}</div>
                     }
                     
+                    {/*}
                     <div className="col-lg-12 col-md-12">
                         <div className="billing-info">
                             <label>날짜로 검색(2021-02-05 식으로 입력)</label>
@@ -169,7 +184,17 @@ export default function SearchForm() {
                             :
                                 <div style={{ color: "gray", fontSize: "10px", margin: '-5px 0 10px 15px' }}>{guideTxts.nameGuide}</div>
                     }
-
+                    */}
+                </div>
+                
+                <div className="billing-back-btn">
+                    <div className="billing-btn">
+                        <button type="submit">검색하기</button>
+                    </div>
+                </div>
+                </form>
+                <form  onSubmit={searchByWriter}>
+                <div className="row">
                     <div className="col-lg-12 col-md-12">
                         <div className="billing-info">
                             <label>작가 이름으로 검색</label>

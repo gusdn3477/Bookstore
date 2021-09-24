@@ -50,7 +50,7 @@ export default function BuyForm({id}) {
                 },
                 body: JSON.stringify({
                     productId: values.productId,
-                    qty : values.qty,
+                    qty : localStorage.getItem('qty'),
                     unitPrice : values.unitPrice
                 }),
             }).
@@ -85,7 +85,7 @@ export default function BuyForm({id}) {
 
     const handleChangeForm = (e) => {
         setUserValues({ 
-            ...values, 
+            ...userValues, 
             [e.target.name]: e.target.value 
         });
     }
@@ -108,7 +108,7 @@ export default function BuyForm({id}) {
         
     
         if (!isUserId(values.userId)) userIdError = "아이디 형식을 확인 해 주세요.( 한글 불가 )"; 
-        if (!isPhone(values.phone)) phoneError = "휴대폰 형식이 아닙니다.";
+        // if (!isPhone(values.phone)) phoneError = "휴대폰 형식이 아닙니다.";
         if ((userValues.name).length === 0) nameError = "이름을 입력해 주세요.";
         if ((userValues.address).length === 0) addressError = "주소를 입력해 주세요.";
     

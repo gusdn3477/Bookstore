@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export default function MyAccountForm() {
 
     const [ usersDatas, setUsersDatas ] = useState([]);
+    
     useEffect(()=>{
         fetch(`/order-service/${localStorage.getItem('userId')}/orders`)
         .then(res => {
@@ -43,17 +44,17 @@ export default function MyAccountForm() {
                                         <div className="card-body">
                                         <div className="account-info-wrapper">
                                             <h4>주문내역</h4>
-                                        </div>
-                                            <div className="myaccount-info-wrapper">
-                                            {
-                                                usersDatas.map(item => (
-                                                    <AddressEdit 
-                                                        key = {item.id}
-                                                        data = {item}/>
-                                                ))
-                                            }
-                                        </div>
-                                        </div>
+                                            </div>
+                                                <div className="myaccount-info-wrapper">
+                                                {
+                                                    usersDatas.map(item => (
+                                                        <AddressEdit 
+                                                            key = {item.id}
+                                                            data = {item}/>
+                                                    ))
+                                                }
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                                 

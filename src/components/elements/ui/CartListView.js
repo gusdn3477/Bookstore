@@ -1,10 +1,11 @@
 import {Link} from 'react-router-dom';
 import React, {useState} from 'react';
+import { useHistory } from 'react-router';
 
 export default function CartListView({data, setCartDatas}) {
 
     const [count, setCount] = useState(data.qty);
-
+    const gogo = useHistory();
     const handleCountAdd = () => {
         setCount(count+1);
     }
@@ -44,6 +45,12 @@ export default function CartListView({data, setCartDatas}) {
         )
     }
 
+    const linktoBuy = (id) => {
+        localStorage.setItem('qty', count);
+        console.log(count);
+        gogo.push(`/buy/${id}`);
+    }
+
     return(
         <tr>
             <td className="product-thumbnail">
@@ -62,11 +69,7 @@ export default function CartListView({data, setCartDatas}) {
                 <span className="amount">{data.qty * data.unitPrice}</span>
             </td>
             <td className="product-subtotal">{(data.createdAt).substring(0,10)}</td>
-           
-            <td className="product-remove">
-                <Link to={`/buy/${data.productId}`}>구매하기!
-                </Link>
-            </td>
+            <td><button type="button" className="btn btn-primary" onClick={()=>linktoBuy(data.productId)}>구매하기</button></td>
             <td className="product-remove"><button onClick={()=>handleDelete(data.id)}><i className="fa fa-times"></i></button></td>
         </tr>
 

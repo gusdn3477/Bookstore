@@ -6,43 +6,10 @@ export default function MyAccountChangeForm() {
     const [addressDetail, setAddressDetail] = useState(''); // 상세주소
     const [isOpenPost, setIsOpenPost] = useState(false);
 
-    const onChangeOpenPost = () => {
-        setIsOpenPost(!isOpenPost);
-    };
-
-    const onCompletePost = (data) => {
-    let fullAddr = data.address;
-    let extraAddr = '';
-
-    if (data.addressType === 'R') {
-        if (data.bname !== '') {
-            extraAddr += data.bname;
-        }
-        if (data.buildingName !== '') {
-            extraAddr += extraAddr !== '' ? `, ${data.buildingName}` : data.buildingName;
-        }
-        fullAddr += extraAddr !== '' ? ` (${extraAddr})` : '';
-        }
-
-    setAddress(data.zonecode);
-    setAddressDetail(fullAddr);
-    setIsOpenPost(false);
-  };
-
-  const postCodeStyle = {
-    display: 'block',
-    position: 'relative',
-    top: '0%',
-    width: '400px',
-    height: '400px',
-    padding: '7px',
-  };
-
-
     const gogo = useHistory();
     const [usersDatas, setUsersDatas] = useState([]);
     const [values, setValues] = useState({
-        password: usersDatas.password,
+        password: '',
         confirmPassword: '',
         phone: '',
         name: '',
@@ -85,26 +52,23 @@ export default function MyAccountChangeForm() {
     return pass === confirmPass
   }
       const onTextCheck = () => {
-        let userIdError = "";
         let pwdError = "";
         let confirmPwd = "";
         let nameError = "";
         let phoneError = "";
         
-        if (!isUserId(values.userId)) userIdError = "아이디 형식을 확인 해 주세요.( 한글 불가 )";
         if (!isPwd(values.password)) pwdError = "비밀번호 조건을 만족 할 수 없습니다.";
         if (!confirmPassword(values.password, values.confirmPassword)) confirmPwd = "비밀번호가 일치하지 않습니다.";
-        if (values.userId === values.password) pwdError = "아이디를 비밀번호로 사용 할 수 없습니다."; 
         if (!isPhone(values.phone)) phoneError = "휴대폰 형식이 아닙니다.";
 
         if (values.name.length === 0) nameError = "이름을 입력해주세요.";
     
         //console.log(userIdError, emailError, pwdError, confirmPwd, nameError, phoneError, userTypesError, useConfirmError)
         setError({
-          userIdError, pwdError, confirmPwd, nameError, phoneError
+          pwdError, confirmPwd, nameError, phoneError
         })
     
-        if (userIdError || pwdError || confirmPwd || nameError || phoneError ) return false;
+        if (pwdError || confirmPwd || nameError || phoneError ) return false;
         return true;
       }
 
@@ -137,23 +101,20 @@ export default function MyAccountChangeForm() {
 
         else {
         
-            fetch(`/user-service/users`,{
-                method: "POST",
+            fetch(`/user-service/users/${localStorage.getItem('userId')}`,{
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    id : usersDatas.length + 1,
-                    userId: usersDatas.userId,
                     pwd: values.password,
                     name: values.name,
-                    email: values.email,
                     phone: values.phone,
                     address: values.address
                 }),
             }).
             then(
-                alert("success"),
+                alert("회원정보 수정 완료"),
                 gogo.push('/')
             )
             }

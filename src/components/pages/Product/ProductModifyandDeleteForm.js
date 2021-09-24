@@ -17,7 +17,7 @@ export default function OrderListForm() {
         .then(data => {
             setCartDatas(data);
         });
-    },[process.IP, process.PORT]);
+    },[]);
 
     return(
         <div className="cart-main-area pt-90 pb-100">
@@ -31,9 +31,11 @@ export default function OrderListForm() {
                                     <tr>
                                         <th>사진</th>
                                         <th>책 제목</th>
+                                        <th>작가</th>
                                         <th>가격</th>
                                         <th>갯수</th>
                                         <th>총 가격</th>
+                                        <th>등록 일자</th>
                                         <th>삭제하기</th>
                                     </tr>
                                 </thead>

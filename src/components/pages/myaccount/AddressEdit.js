@@ -8,13 +8,14 @@ export default function AddressEdit({id, data}){
                     <div className="col-lg-6 col-md-6 d-flex align-items-center justify-content-center">
                         <div className="entries-info text-center">
                             <p>상품 번호 : {data.productId}</p>
+                            <p>상품 이름 : {data.productName}</p>
                             <p>구매 갯수 : {data.qty}</p>
                             <p>총 가격 : {data.totalPrice}</p>
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-6 d-flex align-items-center justify-content-center">
                         <div className="entries-info text-center">
-                            <p>구매 날짜 : {data.createdAt}</p>
+                            <p>구매 날짜 : {(data.createdAt).substring(0,10)}</p>
                         </div>
                     </div>
                     {/*}

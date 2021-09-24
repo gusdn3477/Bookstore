@@ -4,12 +4,11 @@ import UserListView from './UserListView';
 export default function UserListForm() {
 
     const [userDatas, setUserDatas] = useState([]);
+    
     const myHeaders = new Headers();
     let token = "Bearer " + localStorage.getItem("token");
     myHeaders.append("Authorization", token)
-    let process = require('../../../db/myProcess.json');
 
-    //추후에 orders 테이블로 바꿔야 함
     useEffect(()=>{
         fetch(`/user-service/users`,{
             "headers": myHeaders
@@ -45,7 +44,7 @@ export default function UserListForm() {
                                             <UserListView
                                                 key = {item.id}
                                                 data = {item}
-                                                setCartDatas = {setUserDatas}
+                                                setUserDatas = {setUserDatas}
                                             />
                                         ))
                                     }

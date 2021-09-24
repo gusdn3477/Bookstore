@@ -22,8 +22,8 @@ export default function AddBuyAndCart({productId, productName, qty, unitPrice, s
         console.log(count);
         gogo.push(`/buy/${id}`);
     }
-    const hanlePutCartList = () => {
 
+    const hanlePutCartList = () => {
         fetch(`/cart-service/${localStorage.getItem('userId')}/carts`,{
             method: "POST",
             headers: {

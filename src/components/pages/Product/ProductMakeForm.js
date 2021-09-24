@@ -69,7 +69,7 @@ export default function RegisterForm() {
             fetch(`/catalog-service/catalogs`,{
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
                     productId : values.productId,

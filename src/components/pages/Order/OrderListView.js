@@ -39,7 +39,7 @@ export default function OrderListView({data, setCartDatas}) {
             <span className="amount">{data.qty}</span>
         </td>
         <td className="product-subtotal">{data.totalPrice}</td>
-        <td className="product-date">{data.createdAt}</td>
+        <td className="product-date">{(data.createdAt).substring(0,10)}</td>
         {/*
         <td className="product-remove"><button onClick={()=>handleDelete(data.id)}><i className="fa fa-times"></i></button></td>
         */}

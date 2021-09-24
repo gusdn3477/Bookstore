@@ -276,9 +276,10 @@ export default function RegisterForm() {
                                 <div style={{ color: "gray", fontSize: "10px", margin: '-5px 0 10px 15px' }}>{guideTxts.phoneGuide}</div>
                     }
 
-                    
+                    {/*
                     <AddressModal/>
                     <Test3/>
+                    */}
                     <div className="col-lg-12 col-md-12">
                         <div className="billing-info">
                             <label>주소</label>

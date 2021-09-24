@@ -3,12 +3,9 @@ import React, {useState} from 'react';
 
 export default function UserListView({data, setUserDatas}) {
 
-    let process = require('../../../db/myProcess.json');
-
-    //지우고 새로고침 하는 부분 => 근데 삭제 필요 없다고 함
     const handleDelete = (id) => {
         //확실하지 않음
-        fetch(`user-serivce/${data.userId}/orders`,{
+        fetch(`user-service/users/${data.userId}`,{
             method: "DELETE"
         }).then(
             alert("삭제 되었습니다!"),
@@ -37,7 +34,7 @@ export default function UserListView({data, setUserDatas}) {
             <span className="amount">{data.address}</span>
         </td>
         <td className="product-price-cart">
-            <span className="amount">{data.createdAt}</span>
+            <span className="amount">{(data.createdAt).substring(0,10)}</span>
         </td>
         <td className="product-remove"><button onClick={()=>handleDelete(data.id)}><i className="fa fa-times"></i></button></td>
         {/*
