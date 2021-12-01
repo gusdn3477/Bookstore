@@ -1,0 +1,4 @@
+user-service/target
+apigateway-service/target
+*.xml
+config-service/.idea/workspace.xml
