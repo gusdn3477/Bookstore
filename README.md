@@ -12,4 +12,3 @@
 
 ### 사용법
 - Frontend의 경우, npm install 후 사용해 주세요.
-- 백엔드 repository주소 : https://github.com/momo0503/BookProjectBackEnd
