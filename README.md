@@ -5,10 +5,9 @@
 프로젝트 기간 : 2주  
 <br/>
 
-사용하는 언어: HTML5, CSS3, Javascript  
 프론트엔드 : React.js  
-백엔드 : Spring Boot, Spring Cloud Eureka, AWS RDS(Mariadb), AWS EC2, Docker   
-협업 툴: github, freedcamp(일정관리)
+백엔드 : Spring Boot, Spring Cloud Eureka, JPA, kafka, rabbitmq, AWS RDS(Mariadb), AWS EC2, Docker   
+협업 툴: github, freedcamp
 
 ### 사용법
 - Frontend의 경우, npm install 후 사용해 주세요.
