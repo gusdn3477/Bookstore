@@ -12,13 +12,14 @@ Docker를 활용하여, 이미지를 만들었고, 이미지들을 여러 EC2 �
 
 📒 **주요 기능** 
 
-- user-service : 사용자에 관한 기능을 제공합니다. 회원 가입, 회원 탈퇴 기능을 담당합니다. (로그인의 경우 jwt를 활용한 스프링 시큐리티를 사용했습니다.)
-- catalog-service : 상품에 관한 기능을 제공합니다. 상품 등록, 삭제, 검색 기능을 제공합니다.
-- order-service : 주문을 관리하는 서비스입니다. 상품을 주문할 수 있습니다. 주문 시에 kafka를 사용하였고, catalog-service와의 통신을 통하여 상품 수량이 줄어들게 돕니다.
-- cart-service : 장바구니를 관리하는 서비스입니다. 상품을 장바구니에 담거나 삭제할 수 있습니다. 이 곳에서 구매하기 버튼을 클릭하여 구매하기 페이지로 갈 수 이동할 수 있습니다.  
-프론트엔드 : React.js  
-백엔드 : Spring Boot, Spring Cloud Eureka, JPA, kafka, rabbitmq, AWS RDS(Mariadb), AWS EC2, Docker   
-협업 툴: github, freedcamp
+- user-service : 사용자에 관한 기능을 제공합니다. 회원 가입, 회원정보 수정, 회원 탈퇴 기능을 담당합니다. (로그인의 경우 jwt를 활용한 스프링 시큐리티를 사용했습니다.)
+- catalog-service : 상품에 관한 기능을 제공합니다. 상품 등록, 수정, 삭제할 수 있으며, 작가 이름과 상품 이름으로 검색할 수 있습니다.
+- order-service : 상품 주문을 하는 서비스입니다. 주문 시에 kafka를 사용하였고, catalog-service와의 통신을 통하여 주문 성공 시에 상품 수량이 줄어들게 돕니다.
+- cart-service : 장바구니를 관리하는 서비스입니다. 상품을 장바구니에 담거나 삭제할 수 있습니다. 이 곳에서 구매하기 버튼을 클릭하여 구매하기 페이지로 갈 수 이동할 수 있습니다.
+
+- 프론트엔드 : React.js   
+- 백엔드 : Spring Boot, Spring Cloud Eureka, JPA, kafka, rabbitmq, AWS RDS(Mariadb), AWS EC2, Docker   
+- 협업 툴: github, freedcamp
 
 
 ### 사용법
