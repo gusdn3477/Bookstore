@@ -19,8 +19,13 @@ Docker를 활용하여, 이미지를 만들었고, 이미지들을 여러 EC2 �
 
 - 프론트엔드 : React.js   
 - 백엔드 : Spring Boot, Spring Cloud Eureka, JPA, kafka, rabbitmq, AWS RDS(Mariadb), AWS EC2, Docker   
-- 협업 툴: github, freedcamp
+- 협업 툴: github, freedcamp  
 
+🌱 **프레임워크 및 라이브러리**
+
+프론트엔드 : `React.js`  
+백엔드 : `Spring Boot` `Spring Cloud Eureka` `JPA` `kafka` `rabbitmq` `AWS RDS(Mariadb)` `AWS EC2` `Docker`  
+협업 툴 : `github` `freedcamp`
 
 ### 사용법
 - Frontend의 경우, npm install 후 사용해 주세요.
