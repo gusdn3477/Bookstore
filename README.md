@@ -23,11 +23,18 @@ Docker 이미지를 만든 뒤 Docker hub에 push하였고, 이미지를 여러 
 - order-service : 상품 주문을 하는 서비스입니다. 주문 시에 kafka를 사용하였고, catalog-service와의 통신을 통하여 주문 성공 시에 상품 수량이 줄어들게 돕니다.
 - cart-service : 장바구니를 관리하는 서비스입니다. 상품을 장바구니에 담거나 삭제할 수 있습니다. 이 곳에서 구매하기 버튼을 클릭하여 구매하기 페이지로 갈 수 이동할 수 있습니다.
 
-🌱 **프레임워크 및 라이브러리**
+🌱 **기술 스택**
 
 프론트엔드 : `React.js`  
 백엔드 : `Spring Boot` `Spring Cloud Eureka` `JPA` `kafka` `rabbitmq` `AWS RDS(Mariadb)` `AWS EC2` `Docker`  
-협업 툴 : `github` `freedcamp`
+협업 툴 : `github` `freedcamp`  
+
+<br/>
+
+🌱 **구성도**
+
+![image](https://user-images.githubusercontent.com/46596758/150811005-3e525214-4716-4d13-85d0-70ad29c22aa8.png)
+
 
 ### 사용법
 - Frontend의 경우, npm install 후 사용해 주세요.
